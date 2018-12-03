@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :musician_instruments
   resources :instruments
   resources :bands
   resources :musicians
