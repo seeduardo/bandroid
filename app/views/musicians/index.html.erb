@@ -1,0 +1,23 @@
+<h1>Here is a list of all musicians, along with the instruments they play</h1><hr>
+
+<ul>
+
+<% @musicians.each do |musician| %>
+<% if musician.stage_name.length > 0 %>
+<li><%= musician.stage_name %></li><br>
+<% musician.instruments.each do |instrument| %>
+<ul>
+
+<li><%= instrument.name %></li></ul><br>
+<% end %>
+<% else %>
+<li><%= "User name will appear here instead of stage name" %></li>
+<% musician.instruments.each do |instrument| %>
+<ul>
+
+<li><%= instrument.name %></li></ul><br>
+<% end %>
+<% end %>
+<% end %>
+
+</ul>
