@@ -382,3 +382,172 @@ Processing by MusiciansController#new as HTML
 Completed 200 OK in 46ms (Views: 42.0ms | ActiveRecord: 0.1ms)
 
 
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["first_name", "Derek"], ["last_name", "Bastard"], ["email", "d.bastard@email.com"], ["password_digest", "$2a$10$1nkMngmzPzXjVr1HuDElke./BUXeKFElfpLAgiInprx5QGXtD8b8."], ["created_at", "2018-12-04 16:14:20.150214"], ["updated_at", "2018-12-04 16:14:20.150214"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["first_name", "Wanda"], ["last_name", "Fathead"], ["email", "wanda4eva@provider.com"], ["password_digest", "$2a$10$b7ItOwFbZG1BsPZFl8G4uO3vPThv.cOuUL94tK2v/CPMSWuHW4IsC"], ["created_at", "2018-12-04 16:14:20.218072"], ["updated_at", "2018-12-04 16:14:20.218072"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["first_name", "Colin"], ["last_name", "Cornetto"], ["email", "colingering_on@something.com"], ["password_digest", "$2a$10$yoIG48IWIDBODIEnjcyxRuBxwmJ4RKDLmUlyD0UPBz5rmM5/P3pai"], ["created_at", "2018-12-04 16:14:20.284746"], ["updated_at", "2018-12-04 16:14:20.284746"]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["first_name", "Frieda"], ["last_name", "Stroganoff"], ["email", "friedasthewind@email.com"], ["password_digest", "$2a$10$Uxe.3SvTJQ4mSTqCQL48sOsfd8xKD3BCax78CWQCelLZWZibKYPci"], ["created_at", "2018-12-04 16:14:20.355421"], ["updated_at", "2018-12-04 16:14:20.355421"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["first_name", "Ashley"], ["last_name", "Concrete"], ["email", "conc_ash@butts.com"], ["password_digest", "$2a$10$IsZALZCJ37uM./frjVe7f.R5zvTG71I5pZvRohhSAccT3Ewef0lRe"], ["created_at", "2018-12-04 16:14:20.424113"], ["updated_at", "2018-12-04 16:14:20.424113"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:15
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:15
+  [1m[36mMusician Create (0.4ms)[0m  [1m[32mINSERT INTO "musicians" ("stage_name", "location", "bio", "user_id") VALUES (?, ?, ?, ?)[0m  [["stage_name", "Bastard Biscuits"], ["location", "London"], ["bio", "I'm a bastard"], ["user_id", 1]]
+  ↳ db/seeds.rb:15
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:15
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:16
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:16
+  [1m[36mMusician Create (0.3ms)[0m  [1m[32mINSERT INTO "musicians" ("stage_name", "location", "bio", "user_id") VALUES (?, ?, ?, ?)[0m  [["stage_name", ""], ["location", "Madrid"], ["bio", "What really is music anyway right?"], ["user_id", 2]]
+  ↳ db/seeds.rb:16
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:16
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:17
+  [1m[36mMusician Create (0.2ms)[0m  [1m[32mINSERT INTO "musicians" ("stage_name", "location", "bio", "user_id") VALUES (?, ?, ?, ?)[0m  [["stage_name", "Colcor"], ["location", "Bognor"], ["bio", "Sometimes I feel good, other times not"], ["user_id", 3]]
+  ↳ db/seeds.rb:17
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:18
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ db/seeds.rb:18
+  [1m[36mMusician Create (0.2ms)[0m  [1m[32mINSERT INTO "musicians" ("stage_name", "location", "bio", "user_id") VALUES (?, ?, ?, ?)[0m  [["stage_name", ""], ["location", "Vienna"], ["bio", "I was born to rock"], ["user_id", 4]]
+  ↳ db/seeds.rb:18
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:18
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:19
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ db/seeds.rb:19
+  [1m[36mMusician Create (0.3ms)[0m  [1m[32mINSERT INTO "musicians" ("stage_name", "location", "bio", "user_id") VALUES (?, ?, ?, ?)[0m  [["stage_name", "Ashconc"], ["location", "London"], ["bio", "When I am bored, I play music"], ["user_id", 5]]
+  ↳ db/seeds.rb:19
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:19
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mBand Create (0.3ms)[0m  [1m[32mINSERT INTO "bands" ("name", "location", "bio", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Best Band Ever"], ["location", "London"], ["bio", "The clue's in the name"], ["created_at", "2018-12-04 16:14:20.471648"], ["updated_at", "2018-12-04 16:14:20.471648"]]
+  ↳ db/seeds.rb:21
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:22
+  [1m[36mBand Create (0.3ms)[0m  [1m[32mINSERT INTO "bands" ("name", "location", "bio", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Another Band"], ["location", "Bognor"], ["bio", "We make music innit"], ["created_at", "2018-12-04 16:14:20.474291"], ["updated_at", "2018-12-04 16:14:20.474291"]]
+  ↳ db/seeds.rb:22
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:22
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:23
+  [1m[36mBand Create (0.3ms)[0m  [1m[32mINSERT INTO "bands" ("name", "location", "bio", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Oh Look More Musicians"], ["location", "Hell"], ["bio", "Turn it up, I'm deaf"], ["created_at", "2018-12-04 16:14:20.476331"], ["updated_at", "2018-12-04 16:14:20.476331"]]
+  ↳ db/seeds.rb:23
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:23
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:24
+  [1m[36mBand Create (0.3ms)[0m  [1m[32mINSERT INTO "bands" ("name", "location", "bio", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Total Cack"], ["location", "London"], ["bio", "Oh my god that is a horrible racket"], ["created_at", "2018-12-04 16:14:20.478410"], ["updated_at", "2018-12-04 16:14:20.478410"]]
+  ↳ db/seeds.rb:24
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:24
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:25
+  [1m[36mBand Create (0.3ms)[0m  [1m[32mINSERT INTO "bands" ("name", "location", "bio", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Meh to Names"], ["location", "Vienna"], ["bio", "We're sad we don't have many fans"], ["created_at", "2018-12-04 16:14:20.480587"], ["updated_at", "2018-12-04 16:14:20.480587"]]
+  ↳ db/seeds.rb:25
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:25
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:27
+  [1m[36mInstrument Create (0.3ms)[0m  [1m[32mINSERT INTO "instruments" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Guitar"], ["created_at", "2018-12-04 16:14:20.489913"], ["updated_at", "2018-12-04 16:14:20.489913"]]
+  ↳ db/seeds.rb:27
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:27
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:28
+  [1m[36mInstrument Create (0.4ms)[0m  [1m[32mINSERT INTO "instruments" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Drumkit"], ["created_at", "2018-12-04 16:14:20.496371"], ["updated_at", "2018-12-04 16:14:20.496371"]]
+  ↳ db/seeds.rb:28
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:28
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:29
+  [1m[36mInstrument Create (0.3ms)[0m  [1m[32mINSERT INTO "instruments" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Bass"], ["created_at", "2018-12-04 16:14:20.498586"], ["updated_at", "2018-12-04 16:14:20.498586"]]
+  ↳ db/seeds.rb:29
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:29
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:30
+  [1m[36mInstrument Create (0.4ms)[0m  [1m[32mINSERT INTO "instruments" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Vocals"], ["created_at", "2018-12-04 16:14:20.500596"], ["updated_at", "2018-12-04 16:14:20.500596"]]
+  ↳ db/seeds.rb:30
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:30
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:31
+  [1m[36mInstrument Create (0.3ms)[0m  [1m[32mINSERT INTO "instruments" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Banjo"], ["created_at", "2018-12-04 16:14:20.503073"], ["updated_at", "2018-12-04 16:14:20.503073"]]
+  ↳ db/seeds.rb:31
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:31
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:32
+  [1m[36mInstrument Create (0.3ms)[0m  [1m[32mINSERT INTO "instruments" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Kazoo"], ["created_at", "2018-12-04 16:14:20.505013"], ["updated_at", "2018-12-04 16:14:20.505013"]]
+  ↳ db/seeds.rb:32
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:32
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:33
+  [1m[36mInstrument Create (0.3ms)[0m  [1m[32mINSERT INTO "instruments" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Triangle"], ["created_at", "2018-12-04 16:14:20.507008"], ["updated_at", "2018-12-04 16:14:20.507008"]]
+  ↳ db/seeds.rb:33
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:33
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:34
+  [1m[36mInstrument Create (0.3ms)[0m  [1m[32mINSERT INTO "instruments" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Keyboard"], ["created_at", "2018-12-04 16:14:20.508926"], ["updated_at", "2018-12-04 16:14:20.508926"]]
+  ↳ db/seeds.rb:34
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:34
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:35
+  [1m[36mInstrument Create (0.2ms)[0m  [1m[32mINSERT INTO "instruments" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Gamelan"], ["created_at", "2018-12-04 16:14:20.510884"], ["updated_at", "2018-12-04 16:14:20.510884"]]
+  ↳ db/seeds.rb:35
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:35
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:36
+  [1m[36mInstrument Create (0.3ms)[0m  [1m[32mINSERT INTO "instruments" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Turntables"], ["created_at", "2018-12-04 16:14:20.512958"], ["updated_at", "2018-12-04 16:14:20.512958"]]
+  ↳ db/seeds.rb:36
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:36
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  [1m[36mMusician Load (0.2ms)[0m  [1m[34mSELECT  "musicians".* FROM "musicians" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mMusician Load (0.2ms)[0m  [1m[34mSELECT  "musicians".* FROM "musicians" WHERE "musicians"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  [1m[36mInstrument Load (0.3ms)[0m  [1m[34mSELECT  "instruments".* FROM "instruments" LIMIT ?[0m  [["LIMIT", 11]]
