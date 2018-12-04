@@ -27,8 +27,15 @@ class MusiciansController < ApplicationController
   end
 
   def update
-    byebug
     @musician = Musician.find(params[:id])
+    @musician.update(musician_params)
+
+    if @musician
+      redirect_to musician_path(@musician)
+    else
+      byebug
+      render edit
+    end
 
   end
 
@@ -39,7 +46,7 @@ class MusiciansController < ApplicationController
   private
 
   def musician_params
-    params.require(:musician).permit(:stage_name, :location, :bio, :instrument_ids = [])
+    params.require(:musician).permit(:stage_name, :location, :bio, instrument_ids: [])
   end
 
 end
