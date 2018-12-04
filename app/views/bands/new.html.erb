@@ -1,0 +1,14 @@
+<h1>New Band Form</h1>
+
+<%= form_for(@band) do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %> <br>
+  <%= f.label :location, "Where is this band based?" %>
+  <%= f.text_field :location %> <br>
+  <%= f.label :bio%>
+  <%= f.text_field :bio %> <br>
+
+  <!-- #nested form here to include musicians and their respective instrument role/s in the band, plus open roles-->
+  <br>
+  <%= f.submit "WE'RE A BAND, NOT BANNED!" %>
+<% end %>
