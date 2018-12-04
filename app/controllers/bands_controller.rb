@@ -9,7 +9,10 @@ class BandsController < ApplicationController
   end
 
   def new
+    # Add a way to check if a user is logged in before creating a new musician
 
+    @band = Band.new
+      @instruments = Instrument.all
   end
 
   def create
