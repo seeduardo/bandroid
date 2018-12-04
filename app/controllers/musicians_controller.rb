@@ -5,7 +5,7 @@ class MusiciansController < ApplicationController
   end
 
   def show
-
+    @musician = Musician.find(params[:id])
   end
 
   def new
@@ -30,10 +30,9 @@ class MusiciansController < ApplicationController
     @musician = Musician.find(params[:id])
     @musician.update(musician_params)
 
-    if @musician
+    if @musician.valid?
       redirect_to musician_path(@musician)
     else
-      byebug
       render edit
     end
 
