@@ -16,11 +16,12 @@ class MusiciansController < ApplicationController
   end
 
   def create
-
+    byebug
   end
 
   def edit
-
+    @musician = Musician.find(params[:id])
+    @instruments = Instrument.all
   end
 
   def update
@@ -29,6 +30,12 @@ class MusiciansController < ApplicationController
 
   def destroy
 
+  end
+
+  private
+
+  def musician_params
+    params.require(:musician).permit(:stage_name, :location, :bio, :instrument_ids)
   end
 
 end
