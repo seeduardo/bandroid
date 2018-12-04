@@ -551,3 +551,136 @@ Completed 200 OK in 46ms (Views: 42.0ms | ActiveRecord: 0.1ms)
   [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
   [1m[36mMusician Load (0.2ms)[0m  [1m[34mSELECT  "musicians".* FROM "musicians" WHERE "musicians"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
   [1m[36mInstrument Load (0.3ms)[0m  [1m[34mSELECT  "instruments".* FROM "instruments" LIMIT ?[0m  [["LIMIT", 11]]
+Started GET "/musicians/new" for 127.0.0.1 at 2018-12-04 16:25:51 +0000
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/kenanberker/.rvm/gems/ruby-2.3.3/gems/activerecord-5.2.1.1/lib/active_record/log_subscriber.rb:98
+Processing by MusiciansController#new as HTML
+  Rendering musicians/new.html.erb within layouts/application
+  [1m[36mInstrument Load (0.3ms)[0m  [1m[34mSELECT "instruments".* FROM "instruments"[0m
+  ↳ app/views/musicians/new.html.erb:11
+  Rendered musicians/new.html.erb within layouts/application (111.3ms)
+Completed 500 Internal Server Error in 148ms (ActiveRecord: 1.6ms)
+
+
+  
+ActionView::Template::Error (undefined method `instrument_id' for #<Musician:0x007f845c3bd3b8>
+Did you mean?  instrument_ids
+               instrument_ids=
+               instruments
+               instruments=):
+     8:   <%= f.label :bio%>
+     9:   <%= f.text_field :bio %> <br>
+    10: 
+    11:   <%= f.collection_check_boxes :instrument_id, @instruments, :id, :name%>
+    12: 
+    13: 
+    14: <% end %>
+  
+app/views/musicians/new.html.erb:11:in `block in _app_views_musicians_new_html_erb__4352624798226005914_70103221543480'
+app/views/musicians/new.html.erb:3:in `_app_views_musicians_new_html_erb__4352624798226005914_70103221543480'
+  [1m[36mMusician Load (0.2ms)[0m  [1m[34mSELECT  "musicians".* FROM "musicians" ORDER BY "musicians"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mMusician Load (0.2ms)[0m  [1m[34mSELECT  "musicians".* FROM "musicians" ORDER BY "musicians"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mMusician Load (0.2ms)[0m  [1m[34mSELECT  "musicians".* FROM "musicians" ORDER BY "musicians"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mMusician Load (0.2ms)[0m  [1m[34mSELECT  "musicians".* FROM "musicians" ORDER BY "musicians"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mInstrument Load (0.2ms)[0m  [1m[34mSELECT  "instruments".* FROM "instruments" INNER JOIN "musician_instruments" ON "instruments"."id" = "musician_instruments"."instrument_id" WHERE "musician_instruments"."musician_id" = ? LIMIT ?[0m  [["musician_id", 1], ["LIMIT", 11]]
+Started GET "/musicians/new" for 127.0.0.1 at 2018-12-04 16:28:26 +0000
+Processing by MusiciansController#new as HTML
+  Rendering musicians/new.html.erb within layouts/application
+  [1m[36mInstrument Load (0.2ms)[0m  [1m[34mSELECT "instruments".* FROM "instruments"[0m
+  ↳ app/views/musicians/new.html.erb:11
+  Rendered musicians/new.html.erb within layouts/application (23.0ms)
+Completed 200 OK in 299ms (Views: 295.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/musicians/1/edit" for 127.0.0.1 at 2018-12-04 18:37:09 +0000
+Processing by MusiciansController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mMusician Load (0.2ms)[0m  [1m[34mSELECT  "musicians".* FROM "musicians" WHERE "musicians"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/musicians_controller.rb:23
+  Rendering musicians/edit.html.erb within layouts/application
+  Rendered musicians/edit.html.erb within layouts/application (8.2ms)
+Completed 500 Internal Server Error in 45ms (ActiveRecord: 1.1ms)
+
+
+  
+ActionView::Template::Error (undefined method `map' for nil:NilClass
+Did you mean?  tap):
+     8:   <%= f.label :bio%>
+     9:   <%= f.text_field :bio %> <br>
+    10: 
+    11:   <%= f.collection_check_boxes :instrument_ids, @instruments, :id, :name%>
+    12: 
+    13: 
+    14: <% end %>
+  
+app/views/musicians/edit.html.erb:11:in `block in _app_views_musicians_edit_html_erb___2244824136178266680_70103214515580'
+app/views/musicians/edit.html.erb:3:in `_app_views_musicians_edit_html_erb___2244824136178266680_70103214515580'
+Started GET "/musicians/1/edit" for 127.0.0.1 at 2018-12-04 18:37:36 +0000
+Processing by MusiciansController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mMusician Load (0.1ms)[0m  [1m[34mSELECT  "musicians".* FROM "musicians" WHERE "musicians"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/musicians_controller.rb:23
+  Rendering musicians/edit.html.erb within layouts/application
+  [1m[36mInstrument Load (0.2ms)[0m  [1m[34mSELECT "instruments".* FROM "instruments"[0m
+  ↳ app/views/musicians/edit.html.erb:11
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "instruments"."id" FROM "instruments" INNER JOIN "musician_instruments" ON "instruments"."id" = "musician_instruments"."instrument_id" WHERE "musician_instruments"."musician_id" = ?[0m  [["musician_id", 1]]
+  ↳ app/views/musicians/edit.html.erb:11
+  Rendered musicians/edit.html.erb within layouts/application (17.0ms)
+Completed 200 OK in 67ms (Views: 47.6ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/musicians/1/edit" for 127.0.0.1 at 2018-12-04 18:45:05 +0000
+Processing by MusiciansController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mMusician Load (0.1ms)[0m  [1m[34mSELECT  "musicians".* FROM "musicians" WHERE "musicians"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/musicians_controller.rb:25
+  Rendering musicians/edit.html.erb within layouts/application
+  [1m[36mInstrument Load (0.2ms)[0m  [1m[34mSELECT "instruments".* FROM "instruments"[0m
+  ↳ app/views/musicians/edit.html.erb:11
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "instruments"."id" FROM "instruments" INNER JOIN "musician_instruments" ON "instruments"."id" = "musician_instruments"."instrument_id" WHERE "musician_instruments"."musician_id" = ?[0m  [["musician_id", 1]]
+  ↳ app/views/musicians/edit.html.erb:11
+  Rendered musicians/edit.html.erb within layouts/application (16.2ms)
+Completed 200 OK in 67ms (Views: 49.5ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/musicians/1/edit" for 127.0.0.1 at 2018-12-04 18:45:18 +0000
+Processing by MusiciansController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mMusician Load (0.1ms)[0m  [1m[34mSELECT  "musicians".* FROM "musicians" WHERE "musicians"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/musicians_controller.rb:25
+  Rendering musicians/edit.html.erb within layouts/application
+  [1m[36mInstrument Load (0.2ms)[0m  [1m[34mSELECT "instruments".* FROM "instruments"[0m
+  ↳ app/views/musicians/edit.html.erb:11
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "instruments"."id" FROM "instruments" INNER JOIN "musician_instruments" ON "instruments"."id" = "musician_instruments"."instrument_id" WHERE "musician_instruments"."musician_id" = ?[0m  [["musician_id", 1]]
+  ↳ app/views/musicians/edit.html.erb:11
+  Rendered musicians/edit.html.erb within layouts/application (6.7ms)
+Completed 200 OK in 43ms (Views: 38.8ms | ActiveRecord: 0.5ms)
+
+
+Started PATCH "/musicians/1" for 127.0.0.1 at 2018-12-04 18:45:27 +0000
+Processing by MusiciansController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"yTBf0ZqWXR3me//PO6GtR/z/+7FeLFPnXhLu0lnEdMTm+SiiXGnqRz1rVZQIBYjlivGN/MOC235eAKBSoZNcrw==", "musician"=>{"stage_name"=>"Bastard Biscuits", "location"=>"London", "bio"=>"I'm a bastard", "instrument_ids"=>["", "3", "4"]}, "commit"=>"Update Musician", "id"=>"1"}
+  [1m[36mMusician Load (0.3ms)[0m  [1m[34mSELECT  "musicians".* FROM "musicians" WHERE "musicians"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/musicians_controller.rb:31
+No template found for MusiciansController#update, rendering head :no_content
+Completed 204 No Content in 210092ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/musicians/1/edit" for 127.0.0.1 at 2018-12-04 18:50:09 +0000
+Processing by MusiciansController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mMusician Load (0.1ms)[0m  [1m[34mSELECT  "musicians".* FROM "musicians" WHERE "musicians"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/musicians_controller.rb:25
+  Rendering musicians/edit.html.erb within layouts/application
+  [1m[36mInstrument Load (0.2ms)[0m  [1m[34mSELECT "instruments".* FROM "instruments"[0m
+  ↳ app/views/musicians/edit.html.erb:11
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "instruments"."id" FROM "instruments" INNER JOIN "musician_instruments" ON "instruments"."id" = "musician_instruments"."instrument_id" WHERE "musician_instruments"."musician_id" = ?[0m  [["musician_id", 1]]
+  ↳ app/views/musicians/edit.html.erb:11
+  Rendered musicians/edit.html.erb within layouts/application (21.8ms)
+Completed 200 OK in 75ms (Views: 53.7ms | ActiveRecord: 2.0ms)
+
+
+Started PATCH "/musicians/1" for 127.0.0.1 at 2018-12-04 18:50:18 +0000
+Processing by MusiciansController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"G0zSGDQd9kX9dJiUvUOPyjK4ljY33kNb0slRhLYSuRo0haVr8uJBHyZkMs+O56poRLbge6pwy8LS2x8ETkWRcQ==", "musician"=>{"stage_name"=>"Bastard Biscuits", "location"=>"London", "bio"=>"I'm a bastard", "instrument_ids"=>["", "3"]}, "commit"=>"Update Musician", "id"=>"1"}
