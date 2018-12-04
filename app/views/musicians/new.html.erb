@@ -8,7 +8,7 @@
   <%= f.label :bio%>
   <%= f.text_field :bio %> <br>
 
-  <%= f.collection_check_boxes :instrument_id, @instruments, :id, :name%>
-
-
+  <%= f.label "Select your instruments: "%><br>
+  <%= f.collection_check_boxes :instrument_ids, @instruments, :id, :name%><br>
+  <%= f.submit "I MAKE MUSIC, LET ME SHINE!" %>
 <% end %>

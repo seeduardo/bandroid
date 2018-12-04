@@ -551,3 +551,232 @@ Completed 200 OK in 46ms (Views: 42.0ms | ActiveRecord: 0.1ms)
   [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
   [1m[36mMusician Load (0.2ms)[0m  [1m[34mSELECT  "musicians".* FROM "musicians" WHERE "musicians"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
   [1m[36mInstrument Load (0.3ms)[0m  [1m[34mSELECT  "instruments".* FROM "instruments" LIMIT ?[0m  [["LIMIT", 11]]
+Started GET "/" for 127.0.0.1 at 2018-12-04 16:22:50 +0000
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/flatironschool/.rvm/gems/ruby-2.3.3/gems/activerecord-5.2.1.1/lib/active_record/log_subscriber.rb:98
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/flatironschool/.rvm/gems/ruby-2.3.3/gems/railties-5.2.1.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/flatironschool/.rvm/gems/ruby-2.3.3/gems/railties-5.2.1.1/lib/rails/templates/rails/welcome/index.html.erb (6.2ms)
+Completed 200 OK in 31ms (Views: 16.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2018-12-04 16:23:03 +0000
+  
+AbstractController::ActionNotFound (The action 'index' could not be found for UsersController):
+  
+actionpack (5.2.1.1) lib/abstract_controller/base.rb:129:in `process'
+actionview (5.2.1.1) lib/action_view/rendering.rb:32:in `process'
+actionpack (5.2.1.1) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.1.1) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.1.1) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.1.1) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.1.1) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.1.1) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.1.1) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.1.1) lib/action_dispatch/routing/route_set.rb:840:in `call'
+rack (2.0.6) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.0.6) lib/rack/etag.rb:25:in `call'
+rack (2.0.6) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.6) lib/rack/head.rb:12:in `call'
+actionpack (5.2.1.1) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.0.6) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.6) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.2.1.1) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.1.1) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.1.1) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.1.1) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.1.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.1.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1.1) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.1.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.1.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/method_override.rb:22:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.1.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/musicians" for 127.0.0.1 at 2018-12-04 16:23:12 +0000
+Processing by MusiciansController#index as HTML
+  Rendering musicians/index.html.erb within layouts/application
+  Rendered musicians/index.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 635ms (Views: 628.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/musicians/new" for 127.0.0.1 at 2018-12-04 16:23:18 +0000
+Processing by MusiciansController#new as HTML
+  Rendering musicians/new.html.erb within layouts/application
+  [1m[36mInstrument Load (0.8ms)[0m  [1m[34mSELECT "instruments".* FROM "instruments"[0m
+  ↳ app/views/musicians/new.html.erb:11
+  Rendered musicians/new.html.erb within layouts/application (231.6ms)
+Completed 500 Internal Server Error in 309ms (ActiveRecord: 3.3ms)
+
+
+  
+ActionView::Template::Error (undefined method `instrument_id' for #<Musician:0x007f8b85c6a760>
+Did you mean?  instrument_ids
+               instrument_ids=
+               instruments
+               instruments=):
+     8:   <%= f.label :bio%>
+     9:   <%= f.text_field :bio %> <br>
+    10: 
+    11:   <%= f.collection_check_boxes :instrument_id, @instruments, :id, :name%>
+    12: 
+    13: 
+    14: <% end %>
+  
+app/views/musicians/new.html.erb:11:in `block in _app_views_musicians_new_html_erb__1532294716855287955_70118565847440'
+app/views/musicians/new.html.erb:3:in `_app_views_musicians_new_html_erb__1532294716855287955_70118565847440'
+Started GET "/instruments" for 127.0.0.1 at 2018-12-04 16:24:49 +0000
+Processing by InstrumentsController#index as HTML
+  Rendering instruments/index.html.erb within layouts/application
+  Rendered instruments/index.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 73ms (Views: 68.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/musicians" for 127.0.0.1 at 2018-12-04 16:24:58 +0000
+Processing by MusiciansController#index as HTML
+  Rendering musicians/index.html.erb within layouts/application
+  Rendered musicians/index.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 73ms (Views: 67.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/musicians/new" for 127.0.0.1 at 2018-12-04 16:25:03 +0000
+Processing by MusiciansController#new as HTML
+  Rendering musicians/new.html.erb within layouts/application
+  [1m[36mInstrument Load (0.3ms)[0m  [1m[34mSELECT "instruments".* FROM "instruments"[0m
+  ↳ app/views/musicians/new.html.erb:11
+  Rendered musicians/new.html.erb within layouts/application (24.7ms)
+Completed 500 Internal Server Error in 42ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionView::Template::Error (undefined method `instrument_id' for #<Musician:0x007f8b815bc610>
+Did you mean?  instrument_ids
+               instrument_ids=
+               instruments
+               instruments=):
+     8:   <%= f.label :bio%>
+     9:   <%= f.text_field :bio %> <br>
+    10: 
+    11:   <%= f.collection_check_boxes :instrument_id, @instruments, :id, :name%>
+    12: 
+    13: 
+    14: <% end %>
+  
+app/views/musicians/new.html.erb:11:in `block in _app_views_musicians_new_html_erb__1532294716855287955_70118610439160'
+app/views/musicians/new.html.erb:3:in `_app_views_musicians_new_html_erb__1532294716855287955_70118610439160'
+Started GET "/musicians/new" for 127.0.0.1 at 2018-12-04 18:13:05 +0000
+Processing by MusiciansController#new as HTML
+  Rendering musicians/new.html.erb within layouts/application
+  [1m[36mInstrument Load (0.2ms)[0m  [1m[34mSELECT "instruments".* FROM "instruments"[0m
+  ↳ app/views/musicians/new.html.erb:11
+  Rendered musicians/new.html.erb within layouts/application (22.2ms)
+Completed 500 Internal Server Error in 36ms (ActiveRecord: 0.2ms)
+
+
+  
+ActionView::Template::Error (undefined method `instrument_id' for #<Musician:0x007f8b81685e98>
+Did you mean?  instrument_ids
+               instrument_ids=
+               instruments
+               instruments=):
+     8:   <%= f.label :bio%>
+     9:   <%= f.text_field :bio %> <br>
+    10: 
+    11:   <%= f.collection_check_boxes :instrument_id, @instruments, :id, :name%>
+    12: 
+    13: 
+    14: <% end %>
+  
+app/views/musicians/new.html.erb:11:in `block in _app_views_musicians_new_html_erb__1532294716855287955_70118574138340'
+app/views/musicians/new.html.erb:3:in `_app_views_musicians_new_html_erb__1532294716855287955_70118574138340'
+Started GET "/musicians/new" for 127.0.0.1 at 2018-12-04 18:13:39 +0000
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/flatironschool/.rvm/gems/ruby-2.3.3/gems/activerecord-5.2.1.1/lib/active_record/log_subscriber.rb:98
+Processing by MusiciansController#new as HTML
+  Rendering musicians/new.html.erb within layouts/application
+  [1m[36mInstrument Load (0.2ms)[0m  [1m[34mSELECT "instruments".* FROM "instruments"[0m
+  ↳ app/views/musicians/new.html.erb:11
+  Rendered musicians/new.html.erb within layouts/application (115.5ms)
+Completed 500 Internal Server Error in 151ms (ActiveRecord: 1.1ms)
+
+
+  
+ActionView::Template::Error (undefined method `instrument_id' for #<Musician:0x007faf96569d00>
+Did you mean?  instrument_ids
+               instrument_ids=
+               instruments
+               instruments=):
+     8:   <%= f.label :bio%>
+     9:   <%= f.text_field :bio %> <br>
+    10: 
+    11:   <%= f.collection_check_boxes :instrument_id, @instruments, :id, :name%>
+    12: 
+    13: 
+    14: <% end %>
+  
+app/views/musicians/new.html.erb:11:in `block in _app_views_musicians_new_html_erb__4119726704382317492_70196066857740'
+app/views/musicians/new.html.erb:3:in `_app_views_musicians_new_html_erb__4119726704382317492_70196066857740'
+Started GET "/musicians/new" for 127.0.0.1 at 2018-12-04 18:14:11 +0000
+Processing by MusiciansController#new as HTML
+  Rendering musicians/new.html.erb within layouts/application
+  [1m[36mInstrument Load (0.3ms)[0m  [1m[34mSELECT "instruments".* FROM "instruments"[0m
+  ↳ app/views/musicians/new.html.erb:11
+  Rendered musicians/new.html.erb within layouts/application (60.7ms)
+Completed 200 OK in 321ms (Views: 316.4ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/musicians/new" for 127.0.0.1 at 2018-12-04 18:19:04 +0000
+Processing by MusiciansController#new as HTML
+  Rendering musicians/new.html.erb within layouts/application
+  [1m[36mInstrument Load (0.3ms)[0m  [1m[34mSELECT "instruments".* FROM "instruments"[0m
+  ↳ app/views/musicians/new.html.erb:11
+  Rendered musicians/new.html.erb within layouts/application (7.8ms)
+Completed 200 OK in 63ms (Views: 58.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/musicians/new" for 127.0.0.1 at 2018-12-04 18:20:12 +0000
+Processing by MusiciansController#new as HTML
+  Rendering musicians/new.html.erb within layouts/application
+  [1m[36mInstrument Load (0.3ms)[0m  [1m[34mSELECT "instruments".* FROM "instruments"[0m
+  ↳ app/views/musicians/new.html.erb:12
+  Rendered musicians/new.html.erb within layouts/application (10.9ms)
+Completed 200 OK in 70ms (Views: 65.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/musicians/new" for 127.0.0.1 at 2018-12-04 18:20:25 +0000
+Processing by MusiciansController#new as HTML
+  Rendering musicians/new.html.erb within layouts/application
+  [1m[36mInstrument Load (0.2ms)[0m  [1m[34mSELECT "instruments".* FROM "instruments"[0m
+  ↳ app/views/musicians/new.html.erb:12
+  Rendered musicians/new.html.erb within layouts/application (14.4ms)
+Completed 200 OK in 59ms (Views: 53.6ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/musicians" for 127.0.0.1 at 2018-12-04 18:21:12 +0000
+Processing by MusiciansController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"sWw7vp/9H8GdAWbxluMlZzboGVhpuvQ0EFu6WDy/+OaPgn6tNLMkQCUxkAUdgHU0ikkS8CBqWhQhBTtEIZzdbw==", "musician"=>{"stage_name"=>"Bogomir", "location"=>"Hell", "bio"=>"I make music really well, me", "instrument_ids"=>["", "3", "5", "10"]}, "commit"=>"I MAKE MUSIC, LET ME SHINE!"}
+No template found for MusiciansController#create, rendering head :no_content
+Completed 204 No Content in 136ms (ActiveRecord: 0.0ms)
+
+
