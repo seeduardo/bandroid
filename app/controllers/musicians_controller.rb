@@ -9,7 +9,9 @@ class MusiciansController < ApplicationController
   end
 
   def new
+    # Add a way to check if a user is logged in before creating a new musician
 
+    @musician = Musician.new
   end
 
   def create
