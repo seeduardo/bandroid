@@ -24,8 +24,8 @@ class MusiciansController < ApplicationController
     else
       flash[:errors] = @musician.errors
       # flash.now[:errors] = @musician.errors
-      render new_musician_path
-      # redirect_to new_musician_path
+      # render new_musician_path
+      redirect_to new_musician_path
     end
 
   end
