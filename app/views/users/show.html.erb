@@ -1,10 +1,10 @@
 <h1>Welcome, <%= @user.full_name %>, to your very own Bandroid user profile page!</h1><hr>
 
 <h3> Is "<%= @user.full_name %>" a little too formal for your tastes?</h3><br>
-Well, not to worry; once you create your Musician profile, you can give yourself a Stage Name, which can be anything you like really (even *shock horror* keeping your ditchwater-dull real name!). Where do I create my Musician profile, I hear you asking? Do it <%= link_to "HERE", musicians_path %>, innit.
+Well, not to worry; once you create your Musician profile, you can give yourself a Stage Name, which can be anything you like really (even *shock horror* keeping your ditchwater-dull real name!).<br><br>
 
+Where do I create my Musician profile, I hear you asking? Do it <%= link_to "HERE", new_musician_path %>, innit.<br><br>
+
+If that's old hat, and you've already created your Musician profile, you can view it <%= link_to "by clicking here", @musician %>.<br><br>
 
 Alternatively, click <%= link_to 'here', '/musicians' %> for a list of all your fellow musicians, while in <%= link_to 'this other place', '/bands' %> is a list of all the bands on Bandroid. Awesome.
-<br>
-
-<%= link_to 'Create a Musician', new_musician_path %>

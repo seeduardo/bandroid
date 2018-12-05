@@ -6,6 +6,7 @@ class MusiciansController < ApplicationController
 
   def show
     @musician = Musician.find(params[:id])
+    @user = User.find(params[:id])
   end
 
   def new
@@ -18,8 +19,6 @@ class MusiciansController < ApplicationController
     @musician = Musician.new(musician_params)
     # @musician.user_id = session[:user_id]
     @musician.user_id = current_user.id
-
-    byebug
     if @musician.valid?
       @musician.save
       redirect_to musician_path(@musician)
@@ -34,7 +33,7 @@ class MusiciansController < ApplicationController
 
   def edit
     # Add a way to only be able to edit a musician that belongs to a user
-    
+
     @musician = Musician.find(params[:id])
     authorized_for(@musician.user_id)
     @instruments = Instrument.all
