@@ -11,8 +11,19 @@
 
   <body>
 
-    
+    <% if flash[:errors] %>
+      <ul>
+        <% flash[:errors].each do |e|  %>
+          <li style="color: red;"><%= e %></li>
+        <% end %>
+      </ul>
+    <% end %>
 
+  
+
+   <% if flash[:authorized] %>
+     <p> <%= flash[:authorized] %> </p>
+   <% end %>
     <%= yield %>
   </body>
 </html>
