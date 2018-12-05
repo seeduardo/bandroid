@@ -20,15 +20,26 @@ class MusiciansController < ApplicationController
   end
 
   def edit
+    # Add a way to only be able to edit a musician that belongs to a user
 
+    @musician = Musician.find(params[:id])
+    @instruments = Instrument.all
   end
 
   def update
+    byebug
+    @musician = Musician.find(params[:id])
 
   end
 
   def destroy
 
+  end
+
+  private
+
+  def musician_params
+    params.require(:musician).permit(:stage_name, :location, :bio, :instrument_ids = [])
   end
 
 end

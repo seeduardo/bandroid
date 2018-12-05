@@ -1,0 +1,14 @@
+<h1>Edit Musician Form</h1>
+
+<%= form_for(@musician) do |f| %>
+  <%= f.label :stage_name %>
+  <%= f.text_field :stage_name %> <br>
+  <%= f.label :location, "Which city are you looking to join a band in?" %>
+  <%= f.text_field :location %> <br>
+  <%= f.label :bio%>
+  <%= f.text_field :bio %> <br>
+
+  <%= f.collection_check_boxes :instrument_ids, @instruments, :id, :name%> <br>
+
+  <%= f.submit %>
+<% end %>
