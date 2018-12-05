@@ -16,6 +16,17 @@ class MusiciansController < ApplicationController
   end
 
   def create
+    @musician = Musician.new(musician_params)
+
+    if @musician.valid?
+      @musician.save
+      redirect_to musician_path(@musician)
+    else
+      flash[:errors] = @musician.errors
+      # flash.now[:errors] = @musician.errors
+      render new_musician_path
+      # redirect_to new_musician_path
+    end
 
   end
 
