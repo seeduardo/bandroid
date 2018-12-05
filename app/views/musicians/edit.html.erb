@@ -1,5 +1,10 @@
 <h1>Edit Musician Form</h1>
 
+<% if flash[:errors]%>
+  <h2> There was an error with your form. See below for details.</h2><br>
+<% end%>
+
+
 <%= form_for(@musician) do |f| %>
   <%= f.label :stage_name %>
   <%= f.text_field :stage_name %> <br>
@@ -7,6 +12,12 @@
   <%= f.text_field :location %> <br>
   <%= f.label :bio%>
   <%= f.text_field :bio %> <br>
+
+  <% if flash[:errors]%>
+    <% if flash[:errors].keys.include?("instrument_ids") %>
+      <%="You're a musician! You must play at least one of these! Make sure at least one is selected." %> <br>
+    <% end %>
+  <% end %>
 
   <%= f.collection_check_boxes :instrument_ids, @instruments, :id, :name%> <br>
 

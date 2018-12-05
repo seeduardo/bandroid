@@ -27,15 +27,14 @@ class MusiciansController < ApplicationController
   end
 
   def update
-    byebug
     @musician = Musician.find(params[:id])
     @musician.update(musician_params)
 
     if @musician.valid?
       redirect_to musician_path(@musician)
     else
-      byebug
-      render edit
+      flash[:errors] = @musician.errors
+      redirect_to edit_musician_path
     end
 
   end
