@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_04_112101) do
+ActiveRecord::Schema.define(version: 2018_12_05_104640) do
 
   create_table "band_musicians", force: :cascade do |t|
     t.integer "band_id"
@@ -54,6 +54,7 @@ ActiveRecord::Schema.define(version: 2018_12_04_112101) do
     t.string "password_digest"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "admin"
   end
 
 end
