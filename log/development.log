@@ -1241,3 +1241,43 @@ Processing by MusiciansController#index as HTML
 Completed 200 OK in 67ms (Views: 60.5ms | ActiveRecord: 1.0ms)
 
 
+Started GET "/musicians" for 127.0.0.1 at 2018-12-05 09:21:46 +0000
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/flatironschool/.rvm/gems/ruby-2.3.3/gems/activerecord-5.2.1.1/lib/active_record/log_subscriber.rb:98
+Processing by MusiciansController#index as HTML
+  Rendering musicians/index.html.erb within layouts/application
+  [1m[36mMusician Load (0.3ms)[0m  [1m[34mSELECT "musicians".* FROM "musicians"[0m
+  ↳ app/views/musicians/index.html.erb:4
+  [1m[36mInstrument Load (0.2ms)[0m  [1m[34mSELECT "instruments".* FROM "instruments" INNER JOIN "musician_instruments" ON "instruments"."id" = "musician_instruments"."instrument_id" WHERE "musician_instruments"."musician_id" = ?[0m  [["musician_id", 1]]
+  ↳ app/views/musicians/index.html.erb:7
+  [1m[36mInstrument Load (0.2ms)[0m  [1m[34mSELECT "instruments".* FROM "instruments" INNER JOIN "musician_instruments" ON "instruments"."id" = "musician_instruments"."instrument_id" WHERE "musician_instruments"."musician_id" = ?[0m  [["musician_id", 2]]
+  ↳ app/views/musicians/index.html.erb:14
+  [1m[36mInstrument Load (0.1ms)[0m  [1m[34mSELECT "instruments".* FROM "instruments" INNER JOIN "musician_instruments" ON "instruments"."id" = "musician_instruments"."instrument_id" WHERE "musician_instruments"."musician_id" = ?[0m  [["musician_id", 3]]
+  ↳ app/views/musicians/index.html.erb:7
+  [1m[36mInstrument Load (0.1ms)[0m  [1m[34mSELECT "instruments".* FROM "instruments" INNER JOIN "musician_instruments" ON "instruments"."id" = "musician_instruments"."instrument_id" WHERE "musician_instruments"."musician_id" = ?[0m  [["musician_id", 4]]
+  ↳ app/views/musicians/index.html.erb:14
+  [1m[36mInstrument Load (0.1ms)[0m  [1m[34mSELECT "instruments".* FROM "instruments" INNER JOIN "musician_instruments" ON "instruments"."id" = "musician_instruments"."instrument_id" WHERE "musician_instruments"."musician_id" = ?[0m  [["musician_id", 5]]
+  ↳ app/views/musicians/index.html.erb:7
+  Rendered musicians/index.html.erb within layouts/application (41.0ms)
+Completed 200 OK in 452ms (Views: 431.4ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/musicians" for 127.0.0.1 at 2018-12-05 09:22:10 +0000
+Processing by MusiciansController#index as HTML
+  Rendering musicians/index.html.erb within layouts/application
+  [1m[36mMusician Load (0.3ms)[0m  [1m[34mSELECT "musicians".* FROM "musicians"[0m
+  ↳ app/views/musicians/index.html.erb:4
+  [1m[36mInstrument Load (0.2ms)[0m  [1m[34mSELECT "instruments".* FROM "instruments" INNER JOIN "musician_instruments" ON "instruments"."id" = "musician_instruments"."instrument_id" WHERE "musician_instruments"."musician_id" = ?[0m  [["musician_id", 1]]
+  ↳ app/views/musicians/index.html.erb:7
+  [1m[36mInstrument Load (0.1ms)[0m  [1m[34mSELECT "instruments".* FROM "instruments" INNER JOIN "musician_instruments" ON "instruments"."id" = "musician_instruments"."instrument_id" WHERE "musician_instruments"."musician_id" = ?[0m  [["musician_id", 2]]
+  ↳ app/views/musicians/index.html.erb:14
+  [1m[36mInstrument Load (0.1ms)[0m  [1m[34mSELECT "instruments".* FROM "instruments" INNER JOIN "musician_instruments" ON "instruments"."id" = "musician_instruments"."instrument_id" WHERE "musician_instruments"."musician_id" = ?[0m  [["musician_id", 3]]
+  ↳ app/views/musicians/index.html.erb:7
+  [1m[36mInstrument Load (0.1ms)[0m  [1m[34mSELECT "instruments".* FROM "instruments" INNER JOIN "musician_instruments" ON "instruments"."id" = "musician_instruments"."instrument_id" WHERE "musician_instruments"."musician_id" = ?[0m  [["musician_id", 4]]
+  ↳ app/views/musicians/index.html.erb:14
+  [1m[36mInstrument Load (0.1ms)[0m  [1m[34mSELECT "instruments".* FROM "instruments" INNER JOIN "musician_instruments" ON "instruments"."id" = "musician_instruments"."instrument_id" WHERE "musician_instruments"."musician_id" = ?[0m  [["musician_id", 5]]
+  ↳ app/views/musicians/index.html.erb:7
+  Rendered musicians/index.html.erb within layouts/application (10.7ms)
+Completed 200 OK in 51ms (Views: 46.6ms | ActiveRecord: 1.1ms)
+
+
