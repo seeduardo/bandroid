@@ -22,7 +22,7 @@ class ApplicationController < ActionController::Base
   end
 
   def authorized_for(user_id)
-    if current_user.admin == true
+    if current_user.admin == true || current_user.id == user_id.to_i
       true
     elsif current_user.id != user_id.to_i
       flash[:authorized] = "The Bandroid Police would like to politely inform you that you're not authorized to view that!"

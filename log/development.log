@@ -3086,3 +3086,873 @@ Processing by MusiciansController#new as HTML
 Completed 200 OK in 43ms (Views: 39.7ms | ActiveRecord: 0.2ms)
 
 
+Started GET "/musicians/new" for 127.0.0.1 at 2018-12-05 15:07:21 +0000
+Processing by MusiciansController#new as HTML
+  Rendering musicians/new.html.erb within layouts/application
+  [1m[36mInstrument Load (0.2ms)[0m  [1m[34mSELECT "instruments".* FROM "instruments"[0m
+  ↳ app/views/musicians/new.html.erb:24
+  Rendered musicians/new.html.erb within layouts/application (7.5ms)
+Completed 200 OK in 48ms (Views: 44.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/musicians/login" for 127.0.0.1 at 2018-12-05 15:07:44 +0000
+Processing by MusiciansController#show as HTML
+  Parameters: {"id"=>"login"}
+  [1m[36mMusician Load (0.2ms)[0m  [1m[34mSELECT  "musicians".* FROM "musicians" WHERE "musicians"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/musicians_controller.rb:8
+Completed 404 Not Found in 4ms (ActiveRecord: 0.2ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Musician with 'id'=login):
+  
+app/controllers/musicians_controller.rb:8:in `show'
+Started GET "/login" for 127.0.0.1 at 2018-12-05 15:07:54 +0000
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 37ms (Views: 33.8ms | ActiveRecord: 0.0ms)
+
+
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT ?[0m  [["LIMIT", 11]]
+Started POST "/sessions" for 127.0.0.1 at 2018-12-05 15:08:51 +0000
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ScBKUUhDnu6R4xZn15xQiDmQ5AL+svjwvWkqlskqZXtmCT0ijrwptErzvDzkOHUqT56ST2MccGm9e2QWMX1NEA==", "email"=>"d.bastard@email.com", "password"=>"[FILTERED]", "commit"=>"Save changes"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "d.bastard@email.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:7
+Redirected to http://localhost:3000/users/1
+Completed 302 Found in 74ms (ActiveRecord: 0.9ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2018-12-05 15:08:51 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:9
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 39ms (Views: 33.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2018-12-05 15:10:45 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:9
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (0.7ms)
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.2ms)
+
+
+  
+SyntaxError (/Users/kenanberker/Development/mod-2/ror/bandroid/app/views/users/show.html.erb:9: syntax error, unexpected '<'
+...reeze;@output_buffer.append=( <%= link_to 'Create a Musician...
+...                               ^
+/Users/kenanberker/Development/mod-2/ror/bandroid/app/views/users/show.html.erb:11: syntax error, unexpected keyword_ensure, expecting ')'
+/Users/kenanberker/Development/mod-2/ror/bandroid/app/views/users/show.html.erb:13: syntax error, unexpected keyword_end, expecting ')'):
+  
+app/views/users/show.html.erb:9: syntax error, unexpected '<'
+app/views/users/show.html.erb:11: syntax error, unexpected keyword_ensure, expecting ')'
+app/views/users/show.html.erb:13: syntax error, unexpected keyword_end, expecting ')'
+Started GET "/users/1" for 127.0.0.1 at 2018-12-05 15:10:58 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:9
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (272.7ms)
+Completed 500 Internal Server Error in 288ms (ActiveRecord: 0.2ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `new_musician' for #<#<Class:0x007f98caded720>:0x007f98d38a3248>
+Did you mean?  new_musician_url):
+    6: 
+    7: Alternatively, click <%= link_to 'here', '/musicians' %> for a list of all your fellow musicians, while in <%= link_to 'this other place', '/bands' %> is a list of all the bands on Bandroid. Awesome.
+    8: 
+    9: <%= link_to 'Create a Musician', new_musician %>
+  
+app/views/users/show.html.erb:9:in `_app_views_users_show_html_erb___1871110134052634901_70147180404240'
+Started GET "/users/1" for 127.0.0.1 at 2018-12-05 15:11:08 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:9
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 51ms (Views: 46.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2018-12-05 15:11:20 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:9
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 36ms (Views: 32.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/musicians/new" for 127.0.0.1 at 2018-12-05 15:11:22 +0000
+Processing by MusiciansController#new as HTML
+  Rendering musicians/new.html.erb within layouts/application
+  [1m[36mInstrument Load (1.2ms)[0m  [1m[34mSELECT "instruments".* FROM "instruments"[0m
+  ↳ app/views/musicians/new.html.erb:24
+  Rendered musicians/new.html.erb within layouts/application (17.9ms)
+Completed 200 OK in 75ms (Views: 69.6ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2018-12-05 15:11:49 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:9
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 52ms (Views: 34.5ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/musicians/new" for 127.0.0.1 at 2018-12-05 15:11:53 +0000
+Processing by MusiciansController#new as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ (byebug):1
+Started GET "/musicians/new" for 127.0.0.1 at 2018-12-05 15:22:25 +0000
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+Processing by MusiciansController#new as HTML
+  ↳ (byebug):1
+  [1m[36mMusician Load (0.1ms)[0m  [1m[34mSELECT  "musicians".* FROM "musicians" WHERE "musicians"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ (byebug):1
+  Rendering musicians/new.html.erb within layouts/application
+  [1m[36mInstrument Load (0.3ms)[0m  [1m[34mSELECT "instruments".* FROM "instruments"[0m
+  Rendering musicians/new.html.erb within layouts/application
+  ↳ app/views/musicians/new.html.erb:24
+  [1m[36mInstrument Load (0.2ms)[0m  [1m[34mSELECT "instruments".* FROM "instruments"[0m
+  ↳ app/views/musicians/new.html.erb:24
+  Rendered musicians/new.html.erb within layouts/application (19.6ms)
+  Rendered musicians/new.html.erb within layouts/application (18.7ms)
+Completed 200 OK in 692134ms (Views: 75.0ms | ActiveRecord: 1.1ms)
+
+
+Completed 200 OK in 46661ms (Views: 86.7ms | ActiveRecord: 1.4ms)
+
+
+Started POST "/musicians" for 127.0.0.1 at 2018-12-05 15:25:07 +0000
+Processing by MusiciansController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"0l/2L4c+xwtBW/XekbWxsZOq0t4b/XDIb3FCPYyyj1P9loFcQcFwUZpLX4WiEZQT5aSkk4ZT+FFvYwy9dOWnOA==", "musician"=>{"stage_name"=>"Wild Jim", "location"=>"Dallas", "bio"=>"asdfasdf", "instrument_ids"=>["", "6"]}, "commit"=>"I MAKE MUSIC, LET ME SHINE!"}
+  [1m[36mInstrument Load (0.2ms)[0m  [1m[34mSELECT "instruments".* FROM "instruments" WHERE "instruments"."id" = ?[0m  [["id", 6]]
+  ↳ app/controllers/musicians_controller.rb:19
+Redirected to http://localhost:3000/musicians/new
+Completed 302 Found in 14ms (ActiveRecord: 0.6ms)
+
+
+Started GET "/musicians/new" for 127.0.0.1 at 2018-12-05 15:25:07 +0000
+Processing by MusiciansController#new as HTML
+  Rendering musicians/new.html.erb within layouts/application
+  [1m[36mInstrument Load (0.2ms)[0m  [1m[34mSELECT "instruments".* FROM "instruments"[0m
+  ↳ app/views/musicians/new.html.erb:24
+  Rendered musicians/new.html.erb within layouts/application (6.2ms)
+Completed 200 OK in 48ms (Views: 41.7ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/musicians" for 127.0.0.1 at 2018-12-05 15:25:57 +0000
+Processing by MusiciansController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"OFYq5PIPu/LGiaH1Jh9HfTY/lYWWBUS10jdPE0TbCLsXn12XNPAMqB2ZC64Vu2LfQDHjyAurzCzSJQGTvIwg0A==", "musician"=>{"stage_name"=>"Wild Jim", "location"=>"Dallas", "bio"=>"asdfasdf", "instrument_ids"=>["", "6"]}, "commit"=>"I MAKE MUSIC, LET ME SHINE!"}
+  [1m[36mInstrument Load (0.1ms)[0m  [1m[34mSELECT "instruments".* FROM "instruments" WHERE "instruments"."id" = ?[0m  [["id", 6]]
+  ↳ app/controllers/musicians_controller.rb:18
+Redirected to http://localhost:3000/musicians/new
+Completed 302 Found in 101771ms (ActiveRecord: 1.7ms)
+
+
+Started GET "/musicians/new" for 127.0.0.1 at 2018-12-05 15:27:39 +0000
+Processing by MusiciansController#new as HTML
+  Rendering musicians/new.html.erb within layouts/application
+  [1m[36mInstrument Load (0.2ms)[0m  [1m[34mSELECT "instruments".* FROM "instruments"[0m
+  ↳ app/views/musicians/new.html.erb:24
+  Rendered musicians/new.html.erb within layouts/application (5.6ms)
+Completed 200 OK in 40ms (Views: 36.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/sign_up" for 127.0.0.1 at 2018-12-05 15:29:14 +0000
+  
+ActionController::RoutingError (No route matches [GET] "/sign_up"):
+  
+actionpack (5.2.1.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.1.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.1.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/method_override.rb:22:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.1.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/signup" for 127.0.0.1 at 2018-12-05 15:29:18 +0000
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 53ms (Views: 37.9ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/signup" for 127.0.0.1 at 2018-12-05 15:29:35 +0000
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"8j5eIiYiPP6kBEumfXCVzdbEAitiA6fWc65t+Xm2XdTd9ylR4N2LpH8U4f1O1LBvoMp0Zv+tL09zvCN5geF1vw==", "user"=>{"first_name"=>"Kenan", "last_name"=>"Berker", "email"=>"kenan@email.com", "password"=>"[FILTERED]"}, "commit"=>"I WANT BANDROID TO CHANGE MY LIFE RIGHT NOW!"}
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "kenan@email.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:14
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:15
+  [1m[36mCACHE User Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "kenan@email.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["first_name", "Kenan"], ["last_name", "Berker"], ["email", "kenan@email.com"], ["password_digest", "$2a$10$K4RQkpRTeTQD6NgVIE05DOIlS.UEHLN/JZI3R3w.nl23XbQHiZ5mC"], ["created_at", "2018-12-05 15:29:35.766755"], ["updated_at", "2018-12-05 15:29:35.766755"]]
+  ↳ app/controllers/users_controller.rb:15
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:15
+Redirected to http://localhost:3000/users/6
+Completed 302 Found in 69ms (ActiveRecord: 1.9ms)
+
+
+Started GET "/users/6" for 127.0.0.1 at 2018-12-05 15:29:35 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:9
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 36ms (Views: 31.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/musicians/new" for 127.0.0.1 at 2018-12-05 15:29:50 +0000
+Processing by MusiciansController#new as HTML
+  Rendering musicians/new.html.erb within layouts/application
+  [1m[36mInstrument Load (0.3ms)[0m  [1m[34mSELECT "instruments".* FROM "instruments"[0m
+  ↳ app/views/musicians/new.html.erb:24
+  Rendered musicians/new.html.erb within layouts/application (11.7ms)
+Completed 200 OK in 67ms (Views: 61.5ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/musicians" for 127.0.0.1 at 2018-12-05 15:30:02 +0000
+Processing by MusiciansController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"20vjVvTNdviuIczUl3VqyAkFXlKwip7gcnxhjWelRXJ7HhVsBlOQLo61OsW4rmrqW2oLikxH+IVSrbICnDIjoQ==", "musician"=>{"stage_name"=>"Wild Jim", "location"=>"Dallas", "bio"=>"Westside", "instrument_ids"=>["", "4", "6"]}, "commit"=>"I MAKE MUSIC, LET ME SHINE!"}
+  [1m[36mInstrument Load (0.2ms)[0m  [1m[34mSELECT "instruments".* FROM "instruments" WHERE "instruments"."id" IN (?, ?)[0m  [["id", 4], ["id", 6]]
+  ↳ app/controllers/musicians_controller.rb:18
+Redirected to http://localhost:3000/musicians/new
+Completed 302 Found in 88450ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/musicians/new" for 127.0.0.1 at 2018-12-05 15:31:31 +0000
+Processing by MusiciansController#new as HTML
+  Rendering musicians/new.html.erb within layouts/application
+  [1m[36mInstrument Load (0.3ms)[0m  [1m[34mSELECT "instruments".* FROM "instruments"[0m
+  ↳ app/views/musicians/new.html.erb:24
+  Rendered musicians/new.html.erb within layouts/application (6.5ms)
+Completed 200 OK in 40ms (Views: 36.5ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/musicians" for 127.0.0.1 at 2018-12-05 15:31:48 +0000
+  
+SyntaxError (/Users/kenanberker/Development/mod-2/ror/bandroid/app/controllers/musicians_controller.rb:59: syntax error, unexpected ')', expecting =>):
+  
+app/controllers/musicians_controller.rb:59: syntax error, unexpected ')', expecting =>
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mInstrument Load (0.2ms)[0m  [1m[34mSELECT "instruments".* FROM "instruments" WHERE "instruments"."id" = ?[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mMusician Create (0.5ms)[0m  [1m[32mINSERT INTO "musicians" ("user_id") VALUES (?)[0m  [["user_id", 1]]
+  [1m[36mMusicianInstrument Create (0.2ms)[0m  [1m[32mINSERT INTO "musician_instruments" ("musician_id", "instrument_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["musician_id", 6], ["instrument_id", 1], ["created_at", "2018-12-05 15:34:54.734056"], ["updated_at", "2018-12-05 15:34:54.734056"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mMusician Load (0.4ms)[0m  [1m[34mSELECT  "musicians".* FROM "musicians" ORDER BY "musicians"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mMusician Load (0.2ms)[0m  [1m[34mSELECT  "musicians".* FROM "musicians" WHERE "musicians"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mMusician Load (0.1ms)[0m  [1m[34mSELECT  "musicians".* FROM "musicians" WHERE "musicians"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mMusician Load (0.1ms)[0m  [1m[34mSELECT  "musicians".* FROM "musicians" WHERE "musicians"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  [1m[36mMusician Load (0.2ms)[0m  [1m[34mSELECT  "musicians".* FROM "musicians" ORDER BY "musicians"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mMusician Load (0.3ms)[0m  [1m[34mSELECT  "musicians".* FROM "musicians" LIMIT ?[0m  [["LIMIT", 11]]
+Started GET "/users/6" for 127.0.0.1 at 2018-12-05 16:11:34 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:9
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 57ms (Views: 38.9ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/musicians/new" for 127.0.0.1 at 2018-12-05 16:11:39 +0000
+  
+SyntaxError (/Users/kenanberker/Development/mod-2/ror/bandroid/app/controllers/musicians_controller.rb:59: syntax error, unexpected ')', expecting =>):
+  
+app/controllers/musicians_controller.rb:59: syntax error, unexpected ')', expecting =>
+Started GET "/musicians/new" for 127.0.0.1 at 2018-12-05 16:12:03 +0000
+Processing by MusiciansController#new as HTML
+  Rendering musicians/new.html.erb within layouts/application
+  [1m[36mInstrument Load (0.3ms)[0m  [1m[34mSELECT "instruments".* FROM "instruments"[0m
+  ↳ app/views/musicians/new.html.erb:24
+  Rendered musicians/new.html.erb within layouts/application (20.8ms)
+Completed 200 OK in 82ms (Views: 61.1ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/users/6" for 127.0.0.1 at 2018-12-05 16:12:27 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:9
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 71ms (Views: 34.6ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/musicians/new" for 127.0.0.1 at 2018-12-05 16:12:28 +0000
+Processing by MusiciansController#new as HTML
+  Rendering musicians/new.html.erb within layouts/application
+  [1m[36mInstrument Load (0.3ms)[0m  [1m[34mSELECT "instruments".* FROM "instruments"[0m
+  ↳ app/views/musicians/new.html.erb:24
+  Rendered musicians/new.html.erb within layouts/application (9.7ms)
+Completed 200 OK in 97ms (Views: 92.3ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/musicians" for 127.0.0.1 at 2018-12-05 16:21:47 +0000
+Processing by MusiciansController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"uabZtnjV6y4BYfKkkb1seV32zCNQPbfcd+s98DD8AqsZ8y+MiksN+CH1BLW+ZmxbD5mZ+6zw0blXOu5/y2tkeA==", "musician"=>{"stage_name"=>"Tupac", "location"=>"Compton", "bio"=>"Westside", "instrument_ids"=>["", "4"]}, "commit"=>"I MAKE MUSIC, LET ME SHINE!"}
+  [1m[36mInstrument Load (0.1ms)[0m  [1m[34mSELECT "instruments".* FROM "instruments" WHERE "instruments"."id" = ?[0m  [["id", 4]]
+  ↳ app/controllers/musicians_controller.rb:18
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ (byebug):1
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/musicians_controller.rb:24
+  [1m[36mMusician Create (0.4ms)[0m  [1m[32mINSERT INTO "musicians" ("stage_name", "location", "bio", "user_id") VALUES (?, ?, ?, ?)[0m  [["stage_name", "Tupac"], ["location", "Compton"], ["bio", "Westside"], ["user_id", 6]]
+  ↳ app/controllers/musicians_controller.rb:24
+  [1m[36mMusicianInstrument Create (0.2ms)[0m  [1m[32mINSERT INTO "musician_instruments" ("musician_id", "instrument_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["musician_id", 7], ["instrument_id", 4], ["created_at", "2018-12-05 16:22:08.444954"], ["updated_at", "2018-12-05 16:22:08.444954"]]
+  ↳ app/controllers/musicians_controller.rb:24
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/musicians_controller.rb:24
+Redirected to http://localhost:3000/musicians/7
+Completed 302 Found in 20670ms (ActiveRecord: 3.9ms)
+
+
+Started GET "/musicians/7" for 127.0.0.1 at 2018-12-05 16:22:08 +0000
+Processing by MusiciansController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mMusician Load (0.2ms)[0m  [1m[34mSELECT  "musicians".* FROM "musicians" WHERE "musicians"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/musicians_controller.rb:8
+  Rendering musicians/show.html.erb within layouts/application
+  Rendered musicians/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 36ms (Views: 31.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/musicians/7/edit" for 127.0.0.1 at 2018-12-05 16:22:14 +0000
+Processing by MusiciansController#edit as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mMusician Load (0.2ms)[0m  [1m[34mSELECT  "musicians".* FROM "musicians" WHERE "musicians"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/musicians_controller.rb:38
+  Rendering musicians/edit.html.erb within layouts/application
+  [1m[36mInstrument Load (0.4ms)[0m  [1m[34mSELECT "instruments".* FROM "instruments"[0m
+  ↳ app/views/musicians/edit.html.erb:22
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "instruments"."id" FROM "instruments" INNER JOIN "musician_instruments" ON "instruments"."id" = "musician_instruments"."instrument_id" WHERE "musician_instruments"."musician_id" = ?[0m  [["musician_id", 7]]
+  ↳ app/views/musicians/edit.html.erb:22
+  Rendered musicians/edit.html.erb within layouts/application (22.7ms)
+Completed 200 OK in 87ms (Views: 77.4ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/musicians/2/edit" for 127.0.0.1 at 2018-12-05 16:22:25 +0000
+Processing by MusiciansController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mMusician Load (0.1ms)[0m  [1m[34mSELECT  "musicians".* FROM "musicians" WHERE "musicians"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/musicians_controller.rb:38
+  Rendering musicians/edit.html.erb within layouts/application
+  [1m[36mInstrument Load (0.2ms)[0m  [1m[34mSELECT "instruments".* FROM "instruments"[0m
+  ↳ app/views/musicians/edit.html.erb:22
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "instruments"."id" FROM "instruments" INNER JOIN "musician_instruments" ON "instruments"."id" = "musician_instruments"."instrument_id" WHERE "musician_instruments"."musician_id" = ?[0m  [["musician_id", 2]]
+  ↳ app/views/musicians/edit.html.erb:22
+  Rendered musicians/edit.html.erb within layouts/application (7.5ms)
+Completed 200 OK in 46ms (Views: 41.8ms | ActiveRecord: 0.5ms)
+
+
+Started PATCH "/musicians/2" for 127.0.0.1 at 2018-12-05 16:22:30 +0000
+Processing by MusiciansController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ZqFp0RvTrnbHgSQLKAa/japbcesusMgyCKYxWQa9u1RJaB6i3SwZLByRjlAbopov3FUHprMeQKsItH/Z/uqTPw==", "musician"=>{"stage_name"=>"Wild Jim", "location"=>"Madrid", "bio"=>"What really is music anyway right?", "instrument_ids"=>["", "4", "6"]}, "commit"=>"Update Musician", "id"=>"2"}
+  [1m[36mMusician Load (0.1ms)[0m  [1m[34mSELECT  "musicians".* FROM "musicians" WHERE "musicians"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/musicians_controller.rb:43
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/musicians_controller.rb:44
+  [1m[36mInstrument Load (0.2ms)[0m  [1m[34mSELECT "instruments".* FROM "instruments" WHERE "instruments"."id" IN (?, ?)[0m  [["id", 4], ["id", 6]]
+  ↳ app/controllers/musicians_controller.rb:44
+  [1m[36mInstrument Load (0.2ms)[0m  [1m[34mSELECT "instruments".* FROM "instruments" INNER JOIN "musician_instruments" ON "instruments"."id" = "musician_instruments"."instrument_id" WHERE "musician_instruments"."musician_id" = ?[0m  [["musician_id", 2]]
+  ↳ app/controllers/musicians_controller.rb:44
+  [1m[36mMusicianInstrument Create (0.5ms)[0m  [1m[32mINSERT INTO "musician_instruments" ("musician_id", "instrument_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["musician_id", 2], ["instrument_id", 6], ["created_at", "2018-12-05 16:22:30.306527"], ["updated_at", "2018-12-05 16:22:30.306527"]]
+  ↳ app/controllers/musicians_controller.rb:44
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/musicians_controller.rb:44
+  [1m[35m (4.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/musicians_controller.rb:44
+Redirected to http://localhost:3000/musicians/2
+Completed 302 Found in 16ms (ActiveRecord: 5.4ms)
+
+
+Started GET "/musicians/2" for 127.0.0.1 at 2018-12-05 16:22:30 +0000
+Processing by MusiciansController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mMusician Load (0.1ms)[0m  [1m[34mSELECT  "musicians".* FROM "musicians" WHERE "musicians"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/musicians_controller.rb:8
+  Rendering musicians/show.html.erb within layouts/application
+  Rendered musicians/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 34ms (Views: 30.3ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/musicians/2/edit" for 127.0.0.1 at 2018-12-05 16:31:45 +0000
+Processing by MusiciansController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mMusician Load (0.2ms)[0m  [1m[34mSELECT  "musicians".* FROM "musicians" WHERE "musicians"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/musicians_controller.rb:38
+  Rendering musicians/edit.html.erb within layouts/application
+  [1m[36mInstrument Load (0.2ms)[0m  [1m[34mSELECT "instruments".* FROM "instruments"[0m
+  ↳ app/views/musicians/edit.html.erb:22
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "instruments"."id" FROM "instruments" INNER JOIN "musician_instruments" ON "instruments"."id" = "musician_instruments"."instrument_id" WHERE "musician_instruments"."musician_id" = ?[0m  [["musician_id", 2]]
+  ↳ app/views/musicians/edit.html.erb:22
+  Rendered musicians/edit.html.erb within layouts/application (5.8ms)
+Completed 200 OK in 51ms (Views: 46.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2018-12-05 16:39:41 +0000
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/kenanberker/.rvm/gems/ruby-2.3.3/gems/activerecord-5.2.1.1/lib/active_record/log_subscriber.rb:98
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 307ms (Views: 295.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2018-12-05 16:39:59 +0000
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"IO6QTF/W7CvzSvPVuKCG3r1hhD+V0f4A1OxLKrT2fP0PJ+c/mSlbcShaWY6LBKN8y2/ycgh/dpnU/gWqTKFUlg==", "email"=>"kenan@email.com", "password"=>"[FILTERED]", "commit"=>"Save changes"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "kenan@email.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:7
+Redirected to http://localhost:3000/users/6
+Completed 302 Found in 83ms (ActiveRecord: 1.0ms)
+
+
+Started GET "/users/6" for 127.0.0.1 at 2018-12-05 16:39:59 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:9
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 36ms (Views: 31.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/musicians/2/edit" for 127.0.0.1 at 2018-12-05 16:40:19 +0000
+  
+SyntaxError (/Users/kenanberker/Development/mod-2/ror/bandroid/app/controllers/musicians_controller.rb:67: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/controllers/musicians_controller.rb:67: syntax error, unexpected end-of-input, expecting keyword_end
+Started GET "/musicians/2/edit" for 127.0.0.1 at 2018-12-05 16:41:09 +0000
+Processing by MusiciansController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mMusician Load (0.1ms)[0m  [1m[34mSELECT  "musicians".* FROM "musicians" WHERE "musicians"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/musicians_controller.rb:40
+  Rendering musicians/edit.html.erb within layouts/application
+  [1m[36mInstrument Load (0.2ms)[0m  [1m[34mSELECT "instruments".* FROM "instruments"[0m
+  ↳ app/views/musicians/edit.html.erb:22
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "instruments"."id" FROM "instruments" INNER JOIN "musician_instruments" ON "instruments"."id" = "musician_instruments"."instrument_id" WHERE "musician_instruments"."musician_id" = ?[0m  [["musician_id", 2]]
+  ↳ app/views/musicians/edit.html.erb:22
+  Rendered musicians/edit.html.erb within layouts/application (137.2ms)
+Completed 200 OK in 200ms (Views: 172.4ms | ActiveRecord: 1.9ms)
+
+
+Started PATCH "/musicians/2" for 127.0.0.1 at 2018-12-05 16:41:31 +0000
+Processing by MusiciansController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"hScR5Jsa5l5upbtLJJIjlvcJELX9umCmbjdIi/SimOaq7maXXeVRBLW1ERAXNgY0gQdm+GAU6D9uJQYLDPWwjQ==", "musician"=>{"stage_name"=>"Wild Jim", "location"=>"Madrid", "bio"=>"What really is music anyway right?", "instrument_ids"=>["", "4", "5", "6"]}, "commit"=>"Update Musician", "id"=>"2"}
+  [1m[36mMusician Load (0.1ms)[0m  [1m[34mSELECT  "musicians".* FROM "musicians" WHERE "musicians"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/musicians_controller.rb:48
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/musicians_controller.rb:49
+  [1m[36mInstrument Load (0.4ms)[0m  [1m[34mSELECT "instruments".* FROM "instruments" WHERE "instruments"."id" IN (?, ?, ?)[0m  [["id", 4], ["id", 5], ["id", 6]]
+  ↳ app/controllers/musicians_controller.rb:49
+  [1m[36mInstrument Load (0.3ms)[0m  [1m[34mSELECT "instruments".* FROM "instruments" INNER JOIN "musician_instruments" ON "instruments"."id" = "musician_instruments"."instrument_id" WHERE "musician_instruments"."musician_id" = ?[0m  [["musician_id", 2]]
+  ↳ app/controllers/musicians_controller.rb:49
+  [1m[36mMusicianInstrument Create (0.5ms)[0m  [1m[32mINSERT INTO "musician_instruments" ("musician_id", "instrument_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["musician_id", 2], ["instrument_id", 5], ["created_at", "2018-12-05 16:41:31.856958"], ["updated_at", "2018-12-05 16:41:31.856958"]]
+  ↳ app/controllers/musicians_controller.rb:49
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/musicians_controller.rb:49
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/musicians_controller.rb:49
+Redirected to http://localhost:3000/musicians/2
+Completed 302 Found in 43ms (ActiveRecord: 3.1ms)
+
+
+Started GET "/musicians/2" for 127.0.0.1 at 2018-12-05 16:41:31 +0000
+Processing by MusiciansController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mMusician Load (0.2ms)[0m  [1m[34mSELECT  "musicians".* FROM "musicians" WHERE "musicians"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/musicians_controller.rb:8
+  Rendering musicians/show.html.erb within layouts/application
+  Rendered musicians/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 37ms (Views: 33.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/musicians/2/edit" for 127.0.0.1 at 2018-12-05 16:41:33 +0000
+Processing by MusiciansController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mMusician Load (0.1ms)[0m  [1m[34mSELECT  "musicians".* FROM "musicians" WHERE "musicians"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/musicians_controller.rb:40
+  Rendering musicians/edit.html.erb within layouts/application
+  [1m[36mInstrument Load (0.3ms)[0m  [1m[34mSELECT "instruments".* FROM "instruments"[0m
+  ↳ app/views/musicians/edit.html.erb:22
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "instruments"."id" FROM "instruments" INNER JOIN "musician_instruments" ON "instruments"."id" = "musician_instruments"."instrument_id" WHERE "musician_instruments"."musician_id" = ?[0m  [["musician_id", 2]]
+  ↳ app/views/musicians/edit.html.erb:22
+  Rendered musicians/edit.html.erb within layouts/application (12.8ms)
+Completed 200 OK in 85ms (Views: 79.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/users/6" for 127.0.0.1 at 2018-12-05 16:41:55 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:9
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 38ms (Views: 32.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/musicians/2/edit" for 127.0.0.1 at 2018-12-05 16:42:14 +0000
+Processing by MusiciansController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mMusician Load (0.1ms)[0m  [1m[34mSELECT  "musicians".* FROM "musicians" WHERE "musicians"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ (byebug):1
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+Started GET "/musicians/2/edit" for 127.0.0.1 at 2018-12-05 16:44:30 +0000
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+Redirected to http://localhost:3000/musicians
+  [1m[36mCACHE Musician Load (0.0ms)[0m  [1m[34mSELECT  "musicians".* FROM "musicians" WHERE "musicians"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/musicians_controller.rb:40
+Completed 302 Found in 314440ms (ActiveRecord: 1.7ms)
+
+
+Processing by MusiciansController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mMusician Load (0.2ms)[0m  [1m[34mSELECT  "musicians".* FROM "musicians" WHERE "musicians"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/musicians_controller.rb:40
+  Rendering musicians/edit.html.erb within layouts/application
+  [1m[36mInstrument Load (0.2ms)[0m  [1m[34mSELECT "instruments".* FROM "instruments"[0m
+  ↳ app/views/musicians/edit.html.erb:22
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "instruments"."id" FROM "instruments" INNER JOIN "musician_instruments" ON "instruments"."id" = "musician_instruments"."instrument_id" WHERE "musician_instruments"."musician_id" = ?[0m  [["musician_id", 2]]
+  ↳ app/views/musicians/edit.html.erb:22
+  Rendered musicians/edit.html.erb within layouts/application (15.8ms)
+Completed 200 OK in 3153ms (Views: 205.3ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2018-12-05 16:48:27 +0000
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/kenanberker/.rvm/gems/ruby-2.3.3/gems/activerecord-5.2.1.1/lib/active_record/log_subscriber.rb:98
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 299ms (Views: 289.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2018-12-05 16:48:41 +0000
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"WBUecqO8TBPQFhw3d0k0x5jrNqdcH2fhAo+LSIIQsPN33GkBZUP7SQsGtmxE7RFl7uVA6sGx73gCncXIekeYmA==", "email"=>"kenan@email.com", "password"=>"[FILTERED]", "commit"=>"Save changes"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "kenan@email.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:7
+Redirected to http://localhost:3000/users/6
+Completed 302 Found in 81ms (ActiveRecord: 1.2ms)
+
+
+Started GET "/users/6" for 127.0.0.1 at 2018-12-05 16:48:41 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:9
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 36ms (Views: 31.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/musicians/2/edit" for 127.0.0.1 at 2018-12-05 16:48:55 +0000
+Processing by MusiciansController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mMusician Load (0.1ms)[0m  [1m[34mSELECT  "musicians".* FROM "musicians" WHERE "musicians"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/musicians_controller.rb:38
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+Redirected to http://localhost:3000/musicians
+Completed 302 Found in 44ms (ActiveRecord: 0.9ms)
+
+
+Started GET "/musicians" for 127.0.0.1 at 2018-12-05 16:48:55 +0000
+Processing by MusiciansController#index as HTML
+  Rendering musicians/index.html.erb within layouts/application
+  [1m[36mMusician Load (0.2ms)[0m  [1m[34mSELECT "musicians".* FROM "musicians"[0m
+  ↳ app/views/musicians/index.html.erb:4
+  [1m[36mInstrument Load (0.3ms)[0m  [1m[34mSELECT "instruments".* FROM "instruments" INNER JOIN "musician_instruments" ON "instruments"."id" = "musician_instruments"."instrument_id" WHERE "musician_instruments"."musician_id" = ?[0m  [["musician_id", 1]]
+  ↳ app/views/musicians/index.html.erb:7
+  [1m[36mInstrument Load (0.2ms)[0m  [1m[34mSELECT "instruments".* FROM "instruments" INNER JOIN "musician_instruments" ON "instruments"."id" = "musician_instruments"."instrument_id" WHERE "musician_instruments"."musician_id" = ?[0m  [["musician_id", 2]]
+  ↳ app/views/musicians/index.html.erb:7
+  [1m[36mInstrument Load (0.1ms)[0m  [1m[34mSELECT "instruments".* FROM "instruments" INNER JOIN "musician_instruments" ON "instruments"."id" = "musician_instruments"."instrument_id" WHERE "musician_instruments"."musician_id" = ?[0m  [["musician_id", 3]]
+  ↳ app/views/musicians/index.html.erb:7
+  [1m[36mInstrument Load (0.2ms)[0m  [1m[34mSELECT "instruments".* FROM "instruments" INNER JOIN "musician_instruments" ON "instruments"."id" = "musician_instruments"."instrument_id" WHERE "musician_instruments"."musician_id" = ?[0m  [["musician_id", 4]]
+  ↳ app/views/musicians/index.html.erb:14
+  [1m[36mInstrument Load (0.1ms)[0m  [1m[34mSELECT "instruments".* FROM "instruments" INNER JOIN "musician_instruments" ON "instruments"."id" = "musician_instruments"."instrument_id" WHERE "musician_instruments"."musician_id" = ?[0m  [["musician_id", 5]]
+  ↳ app/views/musicians/index.html.erb:7
+  Rendered musicians/index.html.erb within layouts/application (31.2ms)
+Completed 500 Internal Server Error in 42ms (ActiveRecord: 2.2ms)
+
+
+  
+ActionView::Template::Error (undefined method `length' for nil:NilClass):
+    2: 
+    3: <ul>
+    4: <% @musicians.each do |musician| %>
+    5:   <% if musician.stage_name.length > 0 %>
+    6:       <li><%= musician.stage_name %></li><br>
+    7:       <% musician.instruments.each do |instrument| %>
+    8:     <ul>
+  
+app/views/musicians/index.html.erb:5:in `block in _app_views_musicians_index_html_erb__4533232268099015754_70295708397400'
+app/views/musicians/index.html.erb:4:in `_app_views_musicians_index_html_erb__4533232268099015754_70295708397400'
+Started GET "/musicians/2/edit" for 127.0.0.1 at 2018-12-05 16:49:04 +0000
+Processing by MusiciansController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mMusician Load (0.3ms)[0m  [1m[34mSELECT  "musicians".* FROM "musicians" WHERE "musicians"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/musicians_controller.rb:38
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+Redirected to http://localhost:3000/musicians
+Completed 302 Found in 5ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/musicians" for 127.0.0.1 at 2018-12-05 16:49:04 +0000
+Processing by MusiciansController#index as HTML
+  Rendering musicians/index.html.erb within layouts/application
+  [1m[36mMusician Load (0.2ms)[0m  [1m[34mSELECT "musicians".* FROM "musicians"[0m
+  ↳ app/views/musicians/index.html.erb:4
+  [1m[36mInstrument Load (0.3ms)[0m  [1m[34mSELECT "instruments".* FROM "instruments" INNER JOIN "musician_instruments" ON "instruments"."id" = "musician_instruments"."instrument_id" WHERE "musician_instruments"."musician_id" = ?[0m  [["musician_id", 1]]
+  ↳ app/views/musicians/index.html.erb:7
+  [1m[36mInstrument Load (0.1ms)[0m  [1m[34mSELECT "instruments".* FROM "instruments" INNER JOIN "musician_instruments" ON "instruments"."id" = "musician_instruments"."instrument_id" WHERE "musician_instruments"."musician_id" = ?[0m  [["musician_id", 2]]
+  ↳ app/views/musicians/index.html.erb:7
+  [1m[36mInstrument Load (0.1ms)[0m  [1m[34mSELECT "instruments".* FROM "instruments" INNER JOIN "musician_instruments" ON "instruments"."id" = "musician_instruments"."instrument_id" WHERE "musician_instruments"."musician_id" = ?[0m  [["musician_id", 3]]
+  ↳ app/views/musicians/index.html.erb:7
+  [1m[36mInstrument Load (0.1ms)[0m  [1m[34mSELECT "instruments".* FROM "instruments" INNER JOIN "musician_instruments" ON "instruments"."id" = "musician_instruments"."instrument_id" WHERE "musician_instruments"."musician_id" = ?[0m  [["musician_id", 4]]
+  ↳ app/views/musicians/index.html.erb:14
+  [1m[36mInstrument Load (0.1ms)[0m  [1m[34mSELECT "instruments".* FROM "instruments" INNER JOIN "musician_instruments" ON "instruments"."id" = "musician_instruments"."instrument_id" WHERE "musician_instruments"."musician_id" = ?[0m  [["musician_id", 5]]
+  ↳ app/views/musicians/index.html.erb:7
+  Rendered musicians/index.html.erb within layouts/application (12.9ms)
+Completed 500 Internal Server Error in 23ms (ActiveRecord: 0.8ms)
+
+
+  
+ActionView::Template::Error (undefined method `length' for nil:NilClass):
+    2: 
+    3: <ul>
+    4: <% @musicians.each do |musician| %>
+    5:   <% if musician.stage_name.length > 0 %>
+    6:       <li><%= musician.stage_name %></li><br>
+    7:       <% musician.instruments.each do |instrument| %>
+    8:     <ul>
+  
+app/views/musicians/index.html.erb:5:in `block in _app_views_musicians_index_html_erb__4533232268099015754_70295679460240'
+app/views/musicians/index.html.erb:4:in `_app_views_musicians_index_html_erb__4533232268099015754_70295679460240'
+Started GET "/musicians" for 127.0.0.1 at 2018-12-05 16:49:13 +0000
+Processing by MusiciansController#index as HTML
+  Rendering musicians/index.html.erb within layouts/application
+  [1m[36mMusician Load (0.2ms)[0m  [1m[34mSELECT "musicians".* FROM "musicians"[0m
+  ↳ app/views/musicians/index.html.erb:4
+  [1m[36mInstrument Load (0.1ms)[0m  [1m[34mSELECT "instruments".* FROM "instruments" INNER JOIN "musician_instruments" ON "instruments"."id" = "musician_instruments"."instrument_id" WHERE "musician_instruments"."musician_id" = ?[0m  [["musician_id", 1]]
+  ↳ app/views/musicians/index.html.erb:7
+  [1m[36mInstrument Load (0.1ms)[0m  [1m[34mSELECT "instruments".* FROM "instruments" INNER JOIN "musician_instruments" ON "instruments"."id" = "musician_instruments"."instrument_id" WHERE "musician_instruments"."musician_id" = ?[0m  [["musician_id", 2]]
+  ↳ app/views/musicians/index.html.erb:7
+  [1m[36mInstrument Load (0.1ms)[0m  [1m[34mSELECT "instruments".* FROM "instruments" INNER JOIN "musician_instruments" ON "instruments"."id" = "musician_instruments"."instrument_id" WHERE "musician_instruments"."musician_id" = ?[0m  [["musician_id", 3]]
+  ↳ app/views/musicians/index.html.erb:7
+  [1m[36mInstrument Load (0.1ms)[0m  [1m[34mSELECT "instruments".* FROM "instruments" INNER JOIN "musician_instruments" ON "instruments"."id" = "musician_instruments"."instrument_id" WHERE "musician_instruments"."musician_id" = ?[0m  [["musician_id", 4]]
+  ↳ app/views/musicians/index.html.erb:14
+  [1m[36mInstrument Load (0.1ms)[0m  [1m[34mSELECT "instruments".* FROM "instruments" INNER JOIN "musician_instruments" ON "instruments"."id" = "musician_instruments"."instrument_id" WHERE "musician_instruments"."musician_id" = ?[0m  [["musician_id", 5]]
+  ↳ app/views/musicians/index.html.erb:7
+  Rendered musicians/index.html.erb within layouts/application (10.3ms)
+Completed 500 Internal Server Error in 20ms (ActiveRecord: 0.8ms)
+
+
+  
+ActionView::Template::Error (undefined method `length' for nil:NilClass):
+    2: 
+    3: <ul>
+    4: <% @musicians.each do |musician| %>
+    5:   <% if musician.stage_name.length > 0 %>
+    6:       <li><%= musician.stage_name %></li><br>
+    7:       <% musician.instruments.each do |instrument| %>
+    8:     <ul>
+  
+app/views/musicians/index.html.erb:5:in `block in _app_views_musicians_index_html_erb__4533232268099015754_70295671370300'
+app/views/musicians/index.html.erb:4:in `_app_views_musicians_index_html_erb__4533232268099015754_70295671370300'
+Started GET "/musicians" for 127.0.0.1 at 2018-12-05 16:51:10 +0000
+Processing by MusiciansController#index as HTML
+  Rendering musicians/index.html.erb within layouts/application
+  [1m[36mMusician Load (0.2ms)[0m  [1m[34mSELECT "musicians".* FROM "musicians"[0m
+  ↳ app/views/musicians/index.html.erb:4
+  [1m[36mInstrument Load (0.2ms)[0m  [1m[34mSELECT "instruments".* FROM "instruments" INNER JOIN "musician_instruments" ON "instruments"."id" = "musician_instruments"."instrument_id" WHERE "musician_instruments"."musician_id" = ?[0m  [["musician_id", 1]]
+  ↳ app/views/musicians/index.html.erb:7
+  [1m[36mInstrument Load (0.1ms)[0m  [1m[34mSELECT "instruments".* FROM "instruments" INNER JOIN "musician_instruments" ON "instruments"."id" = "musician_instruments"."instrument_id" WHERE "musician_instruments"."musician_id" = ?[0m  [["musician_id", 2]]
+  ↳ app/views/musicians/index.html.erb:7
+  [1m[36mInstrument Load (0.1ms)[0m  [1m[34mSELECT "instruments".* FROM "instruments" INNER JOIN "musician_instruments" ON "instruments"."id" = "musician_instruments"."instrument_id" WHERE "musician_instruments"."musician_id" = ?[0m  [["musician_id", 3]]
+  ↳ app/views/musicians/index.html.erb:7
+  [1m[36mInstrument Load (0.1ms)[0m  [1m[34mSELECT "instruments".* FROM "instruments" INNER JOIN "musician_instruments" ON "instruments"."id" = "musician_instruments"."instrument_id" WHERE "musician_instruments"."musician_id" = ?[0m  [["musician_id", 4]]
+  ↳ app/views/musicians/index.html.erb:7
+  [1m[36mInstrument Load (0.1ms)[0m  [1m[34mSELECT "instruments".* FROM "instruments" INNER JOIN "musician_instruments" ON "instruments"."id" = "musician_instruments"."instrument_id" WHERE "musician_instruments"."musician_id" = ?[0m  [["musician_id", 5]]
+  ↳ app/views/musicians/index.html.erb:7
+  [1m[36mInstrument Load (0.1ms)[0m  [1m[34mSELECT "instruments".* FROM "instruments" INNER JOIN "musician_instruments" ON "instruments"."id" = "musician_instruments"."instrument_id" WHERE "musician_instruments"."musician_id" = ?[0m  [["musician_id", 6]]
+  ↳ app/views/musicians/index.html.erb:14
+  [1m[36mInstrument Load (0.1ms)[0m  [1m[34mSELECT "instruments".* FROM "instruments" INNER JOIN "musician_instruments" ON "instruments"."id" = "musician_instruments"."instrument_id" WHERE "musician_instruments"."musician_id" = ?[0m  [["musician_id", 7]]
+  ↳ app/views/musicians/index.html.erb:7
+  Rendered musicians/index.html.erb within layouts/application (8.2ms)
+Completed 200 OK in 52ms (Views: 47.7ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/musicians/2" for 127.0.0.1 at 2018-12-05 16:53:42 +0000
+Processing by MusiciansController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mMusician Load (0.2ms)[0m  [1m[34mSELECT  "musicians".* FROM "musicians" WHERE "musicians"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/musicians_controller.rb:8
+  Rendering musicians/show.html.erb within layouts/application
+  Rendered musicians/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 39ms (Views: 34.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-12-05 17:01:13 +0000
+  
+AbstractController::ActionNotFound (The action 'home' could not be found for UsersController):
+  
+actionpack (5.2.1.1) lib/abstract_controller/base.rb:129:in `process'
+actionview (5.2.1.1) lib/action_view/rendering.rb:32:in `process'
+actionpack (5.2.1.1) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.1.1) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.1.1) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.1.1) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.1.1) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.1.1) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.1.1) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.1.1) lib/action_dispatch/routing/route_set.rb:840:in `call'
+rack (2.0.6) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.0.6) lib/rack/etag.rb:25:in `call'
+rack (2.0.6) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.6) lib/rack/head.rb:12:in `call'
+actionpack (5.2.1.1) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.0.6) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.6) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.2.1.1) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.1.1) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.1.1) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.1.1) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.1.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.1.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1.1) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.1.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.1.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/method_override.rb:22:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.1.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'

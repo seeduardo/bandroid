@@ -10,14 +10,16 @@ class MusiciansController < ApplicationController
 
   def new
     # Add a way to check if a user is logged in before creating a new musician
-
     @musician = Musician.new
     @instruments = Instrument.all
   end
 
   def create
     @musician = Musician.new(musician_params)
+    # @musician.user_id = session[:user_id]
+    @musician.user_id = current_user.id
 
+    byebug
     if @musician.valid?
       @musician.save
       redirect_to musician_path(@musician)
@@ -32,8 +34,9 @@ class MusiciansController < ApplicationController
 
   def edit
     # Add a way to only be able to edit a musician that belongs to a user
-
+    
     @musician = Musician.find(params[:id])
+    authorized_for(@musician.user_id)
     @instruments = Instrument.all
   end
 

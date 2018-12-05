@@ -2,7 +2,7 @@
 
 <ul>
 <% @musicians.each do |musician| %>
-  <% if musician.stage_name.length > 0 %>
+  <% if musician.stage_name %>
       <li><%= musician.stage_name %></li><br>
       <% musician.instruments.each do |instrument| %>
     <ul>
