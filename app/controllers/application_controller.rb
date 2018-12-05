@@ -25,8 +25,8 @@ class ApplicationController < ActionController::Base
     if current_user.admin == true
       true
     elsif current_user.id != user_id.to_i
-      flash[:authorized] = "The Bandroid Police would like to politely inform you that you're authorized to view that!"
-      redirect_to doctors_path
+      flash[:authorized] = "The Bandroid Police would like to politely inform you that you're not authorized to view that!"
+      redirect_to musicians_path
     end
   end
 

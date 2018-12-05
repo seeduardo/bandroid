@@ -39,7 +39,7 @@ class MusiciansController < ApplicationController
   private
 
   def musician_params
-    params.require(:musician).permit(:stage_name, :location, :bio, :instrument_ids = [])
+    params.require(:musician).permit(:stage_name, :location, :bio, instrument_ids: [])
   end
 
 end

@@ -1,0 +1,13 @@
+<h1>Lucky you, pal, you can SIGN UP for Bandroid here!</h1><hr>
+
+<%= form_for @user, :url => "/signup" do |f| %>
+  <%= f.label :first_name  %>
+  <%= f.text_field :first_name %><br>
+  <%= f.label :last_name  %>
+  <%= f.text_field :last_name %><br>
+  <%= f.label :email  %>
+  <%= f.text_field :email %><br>
+  <%= f.label :password %>
+  <%= f.password_field :password %><br>
+  <%= f.submit "I WANT BANDROID TO CHANGE MY LIFE RIGHT NOW!"%>
+<% end %>
