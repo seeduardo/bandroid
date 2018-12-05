@@ -1,0 +1,11 @@
+<h1>Here is a list of all Bands</h1><hr>
+
+<ul><h2>
+<% @bands.each do |band| %>
+  <li><%= link_to band.name, band %></li>
+<% end %>
+</h2></ul><br>
+
+<h3>You could join one of those, or click through to <%= link_to "create a new Band", new_band_path %>, and get to dictate musical direction yourself. Could be preferable.</h3><br>
+
+<h3>Equally, if you do start your own Band, you may need some Musicians to join you in your endeavours, a list of which you can find here: <%= link_to 'SHOW ME MUSOS PLEASE!', '/musicians' %></h3>
