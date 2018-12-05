@@ -1,0 +1,26 @@
+<h6>It all starts with a whisper....</h6>
+
+<h5>And then you become a Musician....</h5>
+
+<h4>Sign up with Bandroid....</h4>
+
+<h3>And before you know it, you've started your amazing band....</h3><br>
+
+<h2>(drumroll please....)</h2><br>
+
+<h1>Welcome to the threshold of greatness, oh newly spawned Band known as <%= @band.name %>!</h1><br>
+
+<h3>Illustrious members of <%= @band.name %> include the following Musicians:</h3>
+
+<h3>
+  <ul>
+  <% @band.musicians.each do |musician| %>
+    <li><%= link_to musician.stage_name, musician %></li>
+      <ul>
+      <% musician.instruments.each do |instrument| %>
+      <li> <%= instrument.name %> </li>
+        <% end %>
+      </ul>
+      <% end %>
+  </ul>
+</h3>

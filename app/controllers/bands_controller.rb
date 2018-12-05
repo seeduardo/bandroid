@@ -18,8 +18,9 @@ class BandsController < ApplicationController
 
   def create
     @band = Band.new(band_params)
-    # @band.user_id = session[:user_id]
-    @band.user_id = current_user.id
+    # byebug
+    # # @band.user_id = session[:user_id]
+    # @band.musicians.first.user_id = current_user.id
     if @band.valid?
       @band.save
       redirect_to band_path(@band)
@@ -60,7 +61,7 @@ class BandsController < ApplicationController
   private
 
   def band_params
-    params.require(:band).permit(:name, :location, :bio, instrument_ids: [], musician_ids: [])
+    params.require(:band).permit(:name, :location, :bio, :user_id, instrument_ids: [], musician_ids: [])
   end
 
 end
