@@ -13,7 +13,7 @@
 
     <div class="Navbar">
 
-      <h1>B A N D R O I D</h1>
+      <h1><%= link_to "B A N D R O I D", root_path %></h1>
 
         <% if logged_in? %>
           <p> You are currently logged in as <%= link_to current_user.full_name, current_user %>. </p>
@@ -39,7 +39,7 @@
     <% if flash[:authorized] %>
       <p> <%= flash[:authorized] %> </p>
     <% end %>
-      
+
     <%= yield %>
 
 
