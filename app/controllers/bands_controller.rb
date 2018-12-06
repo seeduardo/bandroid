@@ -18,14 +18,10 @@ class BandsController < ApplicationController
 
     @band = Band.new
     @instruments = Instrument.all
+    @musicians = Musician.all
     
     num_of_musicians = 3
-  
     num_of_musicians.times {@band.band_musicians.build}
-
-    # @band.band_musicians.build
-    # @band.band_musicians.build
-    # @band.band_musicians.build
 
   end
 
