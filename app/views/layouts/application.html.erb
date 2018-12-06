@@ -14,10 +14,17 @@
     <div class="Navbar">
 
       <h1>B A N D R O I D</h1>
+
+        <% if logged_in? %>
+          <p> You are currently logged in as <%= link_to current_user.full_name, current_user %>. </p>
+        <% else %>
+          <p> You are not logged in. </p>
+        <% end %>
+
       <h4><%= link_to "Home", root_path %> ::
         <%= link_to "Sign Up", signup_path %> ::
         <%= link_to "Log In", login_path %> ::
-        <%= link_to "Log Out", logout_path %> ::
+        <%= link_to "Log Out", logout_path, method: 'post'%> ::
         <%= link_to "Inspire Me!", href="https://giphy.com/gifs/motivationalgif-xT4uQCnq6bDx8itLhK/fullscreen" %></h4> <hr><hr>
     </div>
 
