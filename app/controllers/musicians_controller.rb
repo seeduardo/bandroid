@@ -14,6 +14,7 @@ class MusiciansController < ApplicationController
 
   def show_public
     @musician = Musician.find(params[:id])
+    @user = @musician.user
   end
 
   def new
