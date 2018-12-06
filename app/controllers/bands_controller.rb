@@ -14,20 +14,30 @@ class BandsController < ApplicationController
 
     @band = Band.new
     @instruments = Instrument.all
+    
+    num_of_musicians = 3
+  
+    num_of_musicians.times {@band.band_musicians.build}
+
+    # @band.band_musicians.build
+    # @band.band_musicians.build
+    # @band.band_musicians.build
+
   end
 
+
   def create
+    byebug
     @band = Band.new(band_params)
-    # byebug
     # # @band.user_id = session[:user_id]
     # @band.musicians.first.user_id = current_user.id
     if @band.valid?
       @band.save
+      byebug
       redirect_to band_path(@band)
     else
       flash[:errors] = @band.errors
-      # flash.now[:errors] = @band.errors
-      # render new_band_path
+      byebug
       redirect_to new_band_path
     end
 
@@ -61,7 +71,8 @@ class BandsController < ApplicationController
   private
 
   def band_params
-    params.require(:band).permit(:name, :location, :bio, :user_id, instrument_ids: [], musician_ids: [])
+    params.require(:band).permit(:name, :location, :bio, :user_id, instrument_ids: [], musician_ids: [], band_musicians_attributes: [:role, :filled])
   end
+
 
 end

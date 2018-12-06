@@ -1,6 +1,6 @@
 class BandMusician < ApplicationRecord
 
   belongs_to :band
-  belongs_to :musician
+  has_one :musician
 
 end

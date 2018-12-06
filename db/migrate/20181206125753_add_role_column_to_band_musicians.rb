@@ -4,3 +4,4 @@ class AddRoleColumnToBandMusicians < ActiveRecord::Migration[5.2]
     add_column :band_musicians, :filled, :boolean
   end
 end
+ 
