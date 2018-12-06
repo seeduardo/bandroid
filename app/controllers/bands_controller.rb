@@ -7,6 +7,10 @@ class BandsController < ApplicationController
   def show
     @band = Band.find(params[:id])
     @user = current_user
+
+    @filled_roles = @band.filled_roles
+    @open_roles = @band.open_roles
+
   end
 
   def new

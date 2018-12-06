@@ -18,9 +18,8 @@
       <%="You're a musician! You must play at least one of these! Make sure at least one is selected." %> <br>
     <% end %>
   <% end %>
-  
+
   <%= f.label "Select your instruments: "%><br>
-  <%# byebug %>
   <%= f.collection_check_boxes :instrument_ids, @instruments, :id, :name%><br>
   <%= f.submit "I MAKE MUSIC, LET ME SHINE!" %>
 <% end %>

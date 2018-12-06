@@ -9,8 +9,7 @@ class MusiciansController < ApplicationController
     # or, if user has musician already, show error message
 
     @musician = Musician.find(params[:id])
-
-    @user = User.find(params[:id])
+    @user = @musician.user
   end
 
   def new
