@@ -6,4 +6,12 @@ class Band < ApplicationRecord
 
   validates :name, uniqueness: true
 
+  def filled_roles
+    self.band_musicians.select {|bm| bm.filled == true}
+  end
+
+  def open_roles
+    self.band_musicians.select {|bm| bm.filled != true}
+  end
+
 end

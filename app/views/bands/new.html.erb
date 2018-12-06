@@ -8,14 +8,6 @@
   <%= f.label :bio%>
   <%= f.text_field :bio %> <br>
 
-
-  <!-- Example of how to create variable number of checkboxes -->
-  <%# @new_musicians_array.each_with_index do |role, index| %>
-    <%# index + 1 %>
-    <%# f.label :name %>
-    <%# f.text_field :name %> <br>
-  <%# end%>
-
   <%= f.fields_for :band_musicians do |bm| %>
     <%= bm.label :role %>
     <%= bm.text_field :role %>
@@ -23,12 +15,7 @@
     <%= bm.label :filled %>
     <%= bm.text_field :filled %>
     <br>
-
-    <% end %>
-
-    
-  
-  
+  <% end %>
   <br>
   <%= f.submit "WE'RE A BAND, NOT BANNED!" %>
 <% end %><br><hr>
