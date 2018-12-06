@@ -5,7 +5,11 @@ class MusiciansController < ApplicationController
   end
 
   def show
+    # on the page, remind the user that you can only have one musician per user
+    # or, if user has musician already, show error message
+
     @musician = Musician.find(params[:id])
+
     @user = User.find(params[:id])
   end
 

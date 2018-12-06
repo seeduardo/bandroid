@@ -11,7 +11,7 @@ class UsersController < ApplicationController
   def show
     authorized_for(params[:id])
     @user = User.find(params[:id])
-    @musician = Musician.find(params[:id])
+    # @musician = Musician.find(params[:id])
   end
 
   def create
