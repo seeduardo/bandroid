@@ -1,12 +1,12 @@
-<h1>GADZOOKS! As a caterpillar is to a butterfly, you, oh <%= @user.full_name %>, have pupated from a mere User and into your own, fully-fledged Musician
+<h2>GADZOOKS! As a caterpillar is to a butterfly, you, oh <%= @user.full_name %>, have pupated from a mere User and into your own, fully-fledged Musician
     <% if @musician.stage_name.empty? == false %>
       known forever more as <%= @musician.stage_name %> -
     <% else %>
     -
       <% end %>
-    isn't that just excellent news?</h1><hr><hr>
+    isn't that just excellent news?</h2><hr>
 
-<h3>This means you can start or join a Band now. The good news just keeps on coming, eh?</h3><br>
+<h3>This means you can start or join a Band now. The good news just keeps on coming, eh?</h3>
 
 <h3>To recap, here are your details,
   <% if @musician.stage_name.empty? == false %>
@@ -36,7 +36,7 @@
         </ul>
       <% end %>
   </ul>
-</h3><br><hr>
+</h3><hr>
 
 
 Even if you already have a Band, you can <%= link_to "create a new Band", new_band_path %> to maximize your musical visibility (we love a mixed metaphor here at Bandroid!). Get cracking and you'll be a household name in no time!<br><hr>
