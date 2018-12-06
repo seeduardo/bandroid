@@ -8,8 +8,34 @@
 
 <h3>This means you can start or join a Band now. The good news just keeps on coming, eh?</h3><br>
 
-Later in this sentence is the place to click to <%= link_to "create a new Band", new_band_path %>, get cracking and you'll be a household name in no time!<br>
+<h3>To recap, here are your details, <%= @musician.stage_name %>:
+  <ul>
+    <li>Location: <%= @musician.location %> </li>
+    <li>Bio: <%= @musician.bio %> </li>
+    <li>Instruments:
+      <ul>
+        <% @musician.instruments.each do |instrument| %>
+        <li> <%= instrument.name %> </li>
+        <% end %>
+      </ul></li>
+    <li>Bands:
+      <% if @musician.bands.empty? == false %>
+        <ul>
+          <% @musician.bands.each do |band| %>
+          <li> <%= link_to band.name, band %> </li>
+          <% end %>
+        </ul></li>
+      <% else %>
+        <ul>
+          <li>None yet.... Why not <%= link_to "start a new band", new_band_path %> right now? No time like the present!</li>
+        </ul>
+      <% end %>
+  </ul>
+</h3><br><hr>
 
-Alternatively, click <%= link_to 'here', '/musicians' %> for a list of all your fellow musicians, while in <%= link_to 'this other place', '/bands' %> is a list of all the bands on Bandroid. Awesome.<br>
+
+Even if you already have a Band, you can <%= link_to "create a new Band", new_band_path %> to maximize your musical visibility (we love a mixed metaphor here at Bandroid!). Get cracking and you'll be a household name in no time!<br><hr>
+
+Alternatively, click <%= link_to 'here', '/musicians' %> for a list of all your fellow musicians, while in <%= link_to 'this other place', '/bands' %> is a list of all the bands on Bandroid. Awesome.<br><hr>
 
 Finally, you can also click through to <%= link_to 'edit your Musician details', edit_musician_path %>, should you want to.
