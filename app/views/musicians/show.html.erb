@@ -8,7 +8,12 @@
 
 <h3>This means you can start or join a Band now. The good news just keeps on coming, eh?</h3><br>
 
-<h3>To recap, here are your details, <%= @musician.stage_name %>:
+<h3>To recap, here are your details,
+  <% if @musician.stage_name.empty? == false %>
+    <%= @musician.stage_name %>:
+  <% else %>
+    <%= @user.full_name %>:
+  <% end %>
   <ul>
     <li>Location: <%= @musician.location %> </li>
     <li>Bio: <%= @musician.bio %> </li>
@@ -38,4 +43,4 @@ Even if you already have a Band, you can <%= link_to "create a new Band", new_ba
 
 Alternatively, click <%= link_to 'here', '/musicians' %> for a list of all your fellow musicians, while in <%= link_to 'this other place', '/bands' %> is a list of all the bands on Bandroid. Awesome.<br><hr>
 
-Finally, you can also click through to <%= link_to 'edit your Musician details', edit_musician_path %>, should you want to.
+Finally, you can also click through to <%= link_to 'edit your Musician details', edit_musician_path %>, should you want to.<hr>
