@@ -36,11 +36,14 @@
       </ul>
     <% end %>
 
-
-
-   <% if flash[:authorized] %>
-     <p> <%= flash[:authorized] %> </p>
-   <% end %>
+    <% if flash[:authorized] %>
+      <p> <%= flash[:authorized] %> </p>
+    <% end %>
+      
     <%= yield %>
+
+
+
+
   </body>
 </html>
