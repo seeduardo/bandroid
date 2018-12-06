@@ -1,4 +1,4 @@
-<h1>New Band Form</h1>
+<h1>New Band Form</h1><hr>
 
 <%= form_for(@band) do |f| %>
   <%= f.label :name %>
@@ -11,4 +11,6 @@
   <!-- #nested form here to include musicians and their respective instrument role/s in the band, plus open roles-->
   <br>
   <%= f.submit "WE'RE A BAND, NOT BANNED!" %>
-<% end %>
+<% end %><br><hr>
+
+Changed your mind? You could look at a <%= link_to 'list of existing Bands', '/bands' %> instead, or even a <%= link_to 'list of existing Musicians', '/bands' %>. It's up to you, really. The world is your oyster, demand some pearls!
