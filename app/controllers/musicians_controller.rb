@@ -12,6 +12,10 @@ class MusiciansController < ApplicationController
     @user = @musician.user
   end
 
+  def show_public
+    @musician = Musician.find(params[:id])
+  end
+
   def new
     # Add a way to check if a user is logged in before creating a new musician
     @musician = Musician.new

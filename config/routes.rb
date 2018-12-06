@@ -19,4 +19,7 @@ Rails.application.routes.draw do
   post '/sessions', to: 'sessions#create', as: 'sessions'
   post '/logout', to: 'sessions#destroy', as: 'logout'
 
+  #public musicians page management
+  get '/musicians/:id/show_public', to: 'musicians#show_public', as: 'public'
+
 end
