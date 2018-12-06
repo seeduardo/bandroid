@@ -19,11 +19,18 @@
       </ul>
     <% end %>
 
-  
+    <% if flash[:authorized] %>
+      <p> <%= flash[:authorized] %> </p>
+    <% end %>
+      
+    <h1>B A N D R O I D</h1> 
+    <h4>Making the world a better place, a band at a time</h4>
+    <hr><hr>
 
-   <% if flash[:authorized] %>
-     <p> <%= flash[:authorized] %> </p>
-   <% end %>
     <%= yield %>
+
+
+
+
   </body>
 </html>
