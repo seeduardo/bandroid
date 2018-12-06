@@ -2,8 +2,8 @@
 
 <ul>
 <% @musicians.each do |musician| %>
-  <% if musician.stage_name == !nil %>
-      <li><%= musician.stage_name %></li><br>
+  <% if musician.stage_name %>
+      <li><%= link_to musician.stage_name, public_path(musician) %></li><br>
       <% musician.instruments.each do |instrument| %>
     <ul>
       <li><%= instrument.name %></li>
