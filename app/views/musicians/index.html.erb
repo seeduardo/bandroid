@@ -1,16 +1,16 @@
-<h1>Here is a list of all musicians, along with the instruments they play</h1><hr>
+<h1>Here is a list of all Musicians and the Instruments they play</h1><hr>
 
 <ul>
 <% @musicians.each do |musician| %>
-  <% if musician.stage_name %>
+  <% if musician.stage_name == !nil %>
       <li><%= musician.stage_name %></li><br>
       <% musician.instruments.each do |instrument| %>
     <ul>
       <li><%= instrument.name %></li>
-    </ul><br>
+    </ul>
       <% end %>
   <% else %>
-      <li><%= "User name will appear here instead of stage name" %></li><br>
+      <li><%= musician.user.full_name %></li><br>
     <% musician.instruments.each do |instrument| %>
     <ul>
       <li><%= instrument.name %></li></ul><br>
@@ -18,3 +18,6 @@
   <% end %>
 <% end %>
 </ul>
+<hr><hr>
+
+Now that you've seen all these lovely musos, how about looking at a <%= link_to 'list of all Bands', '/bands' %>? Or if you're feeling brave, you could just <%= link_to "create your own new Band", new_band_path %> - do it, Bandroid believes in you!
