@@ -3,7 +3,10 @@
 
     <ul>
     <% @musicians.each do |musician| %>
-      <% if musician.stage_name.empty? == false %>
+
+      <% if musician.stage_name == "None Yet" %>
+     
+      <% elsif musician.stage_name.empty? == false %>
           <li><%= link_to musician.stage_name, public_path(musician) %></li><br>
           <% musician.instruments.each do |instrument| %>
         <ul>

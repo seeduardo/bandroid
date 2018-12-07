@@ -60,7 +60,6 @@ class BandsController < ApplicationController
 
     if @band.valid?
       @band.assign_as_filled
-      byebug
       redirect_to band_path(@band)
     else
       flash[:errors] = @band.errors
