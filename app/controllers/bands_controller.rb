@@ -19,7 +19,7 @@ class BandsController < ApplicationController
     @band = Band.new
     @instruments = Instrument.all
     @musicians = Musician.all
-    
+
     num_of_musicians = 3
     num_of_musicians.times {@band.band_musicians.build}
 
@@ -27,17 +27,14 @@ class BandsController < ApplicationController
 
 
   def create
-    byebug
     @band = Band.new(band_params)
     # # @band.user_id = session[:user_id]
     # @band.musicians.first.user_id = current_user.id
     if @band.valid?
       @band.save
-      byebug
       redirect_to band_path(@band)
     else
       flash[:errors] = @band.errors
-      byebug
       redirect_to new_band_path
     end
 
