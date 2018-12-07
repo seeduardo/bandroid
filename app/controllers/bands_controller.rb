@@ -15,12 +15,11 @@ class BandsController < ApplicationController
 
   def new
     # Add a way to check if a user is logged in before creating a new musician
-
     @band = Band.new
     @instruments = Instrument.all
     @musicians = Musician.all
 
-    num_of_musicians = 3
+    num_of_musicians = params[:num_of_musicians].to_i
     num_of_musicians.times {@band.band_musicians.build}
 
   end

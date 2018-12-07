@@ -9,6 +9,8 @@ Rails.application.routes.draw do
 
   root 'users#home'
 
+  post '/bands/new', to: 'bands#new'
+
   # user management
   get "/signup", to: 'users#new', as: 'signup'
   post "/signup", to: 'users#create'
