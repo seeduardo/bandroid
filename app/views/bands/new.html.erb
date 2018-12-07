@@ -13,8 +13,8 @@
         <%= bm.label :role %>
         <%= bm.text_field :role %>
 
-        <%= bm.label :filled %>
-        <%= bm.check_box :filled %>
+        <%= bm.label 'Musician' %>
+        <%= bm.collection_select :musician_id, @musicians, :id, :stage_name %>
         <br>
       <% end %>
 
