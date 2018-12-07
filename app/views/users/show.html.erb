@@ -1,58 +1,60 @@
-<h2>Welcome, <%= @user.full_name %>, to your very own Bandroid user profile page!</h2><hr>
+<div class="container">
+    <h2>Welcome, <%= @user.full_name %>, to your very own Bandroid user profile page!</h2><hr>
 
-  <% if @user.musician %>
+      <% if @user.musician %>
 
-    <% if @user.musician.stage_name.empty? == false %>
+        <% if @user.musician.stage_name.empty? == false %>
 
-      <h3>Hey <%= @user.musician.stage_name %>, you crazy rock star! Feel free to click through to your <%= link_to "Musician profile page", @user.musician %>, where you can do stuff like edit your details (which are as follows for now):
-            <ul>
-            <% if @user.musician.stage_name.empty? == false %>
-              <li>Stage Name: <%= @user.musician.stage_name %></li>
-            <% else %>
-              <li>No Stage Name</li>
-            <% end %>
-
-              <li>Location: <%= @user.musician.location %> </li>
-              <li>Bio: <%= @user.musician.bio %> </li>
-              <li>Instruments:
+          <h3>Hey <%= @user.musician.stage_name %>, you crazy rock star! Feel free to click through to your <%= link_to "Musician profile page", @user.musician %>, where you can do stuff like edit your details (which are as follows for now):
                 <ul>
-                  <% @user.musician.instruments.each do |instrument| %>
-                  <li> <%= instrument.name %> </li>
-                  <% end %>
-                </ul></li>
-              <li>Bands:
-                <% if @user.musician.bands.empty? == false %>
-                  <ul>
-                    <% @user.musician.bands.each do |band| %>
-                    <li> <%= link_to band.name, band %> </li>
-                    <% end %>
-                  </ul></li>
+                <% if @user.musician.stage_name.empty? == false %>
+                  <li>Stage Name: <%= @user.musician.stage_name %></li>
                 <% else %>
-                  <ul>
-                    <li>None yet.... Why not <%= link_to "start a new band", new_band_path %> right now? No time like the present!</li>
-                  </ul>
+                  <li>No Stage Name</li>
                 <% end %>
-            </ul>
-      </h3><br><br>
 
-    <% else %>
+                  <li>Location: <%= @user.musician.location %> </li>
+                  <li>Bio: <%= @user.musician.bio %> </li>
+                  <li>Instruments:
+                    <ul>
+                      <% @user.musician.instruments.each do |instrument| %>
+                      <li> <%= instrument.name %> </li>
+                      <% end %>
+                    </ul></li>
+                  <li>Bands:
+                    <% if @user.musician.bands.empty? == false %>
+                      <ul>
+                        <% @user.musician.bands.each do |band| %>
+                        <li> <%= link_to band.name, band %> </li>
+                        <% end %>
+                      </ul></li>
+                    <% else %>
+                      <ul>
+                        <li>None yet.... Why not <%= link_to "start a new band", new_band_path %> right now? No time like the present!</li>
+                      </ul>
+                    <% end %>
+                </ul>
+          </h3><br><br>
 
-      <h3> Is "<%= @user.full_name %>" a little too formal for your tastes?<br><br>
+        <% else %>
 
-      No problem, just click through to your <%= link_to "Musician profile page", @user.musician %>, where you can edit your profile to include a Stage Name.</h3><br>
+          <h3> Is "<%= @user.full_name %>" a little too formal for your tastes?<br><br>
 
-    <% end %>
+          No problem, just click through to your <%= link_to "Musician profile page", @user.musician %>, where you can edit your profile to include a Stage Name.</h3><br>
 
-  <% else %>
+        <% end %>
 
-    <h3> Is "<%= @user.full_name %>" a little too formal for your tastes?<br><br>
+      <% else %>
 
-    Well, not to worry; once you create your Musician profile, you can give yourself a Stage Name, which can be anything you like really (even *shock horror* keeping your ditchwater-dull real name!).<br><br>
+        <h3> Is "<%= @user.full_name %>" a little too formal for your tastes?<br><br>
 
-    Where do I create my Musician profile, I hear you asking? Do it <%= link_to "HERE", new_musician_path %>, innit.</h3>
+        Well, not to worry; once you create your Musician profile, you can give yourself a Stage Name, which can be anything you like really (even *shock horror* keeping your ditchwater-dull real name!).<br><br>
 
-  <% end %><hr>
+        Where do I create my Musician profile, I hear you asking? Do it <%= link_to "HERE", new_musician_path %>, innit.</h3>
+
+      <% end %><hr>
 
 
 
-Alternatively, click <%= link_to 'here', '/musicians' %> for a list of all your fellow musicians, while in <%= link_to 'this other place', '/bands' %> is a list of all the bands on Bandroid. Awesome.<br><br>
+    Alternatively, click <%= link_to 'here', '/musicians' %> for a list of all your fellow musicians, while in <%= link_to 'this other place', '/bands' %> is a list of all the bands on Bandroid. Awesome.<br><br>  
+  </div>

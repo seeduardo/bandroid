@@ -1,24 +1,26 @@
-<h2>Here is a list of all Musicians and the Instruments they play:</h2><hr>
+<div class="container">
+    <h2>Here is a list of all Musicians and the Instruments they play:</h2><hr>
 
-<ul>
-<% @musicians.each do |musician| %>
-  <% if musician.stage_name.empty? == false %>
-      <li><%= link_to musician.stage_name, public_path(musician) %></li><br>
-      <% musician.instruments.each do |instrument| %>
     <ul>
-      <li><%= instrument.name %></li><br>
-    </ul>
+    <% @musicians.each do |musician| %>
+      <% if musician.stage_name.empty? == false %>
+          <li><%= link_to musician.stage_name, public_path(musician) %></li><br>
+          <% musician.instruments.each do |instrument| %>
+        <ul>
+          <li><%= instrument.name %></li><br>
+        </ul>
+          <% end %>
+      <% else %>
+          <li><%= link_to musician.user.full_name, public_path(musician) %></li><br>
+        <% musician.instruments.each do |instrument| %>
+        <ul>
+          <li><%= instrument.name %></li><br>
+        </ul>
+        <% end %>
       <% end %>
-  <% else %>
-      <li><%= link_to musician.user.full_name, public_path(musician) %></li><br>
-    <% musician.instruments.each do |instrument| %>
-    <ul>
-      <li><%= instrument.name %></li><br>
-    </ul>
     <% end %>
-  <% end %>
-<% end %>
-</ul>
-<hr>
+    </ul>
+    <hr>
 
-Now that you've seen all these lovely musos, how about looking at a <%= link_to 'list of all Bands', '/bands' %>? Or if you're feeling brave, you could just <%= link_to "create your own new Band", new_band_path %> - do it, Bandroid believes in you!<br><br>
+    Now that you've seen all these lovely musos, how about looking at a <%= link_to 'list of all Bands', '/bands' %>? Or if you're feeling brave, you could just <%= link_to "create your own new Band", new_band_path %> - do it, Bandroid believes in you!<br><br>
+</div>

@@ -1,44 +1,44 @@
-<!--
-<h6>It all starts with a whisper....</h6>
+    <!--
+    <h6>It all starts with a whisper....</h6>
 
-<h5>And then you become a Musician....</h5>
+    <h5>And then you become a Musician....</h5>
 
-<h4>Sign up with Bandroid....</h4>
+    <h4>Sign up with Bandroid....</h4>
 
-<h3>And before you know it, you've started your amazing band....</h3><br>
+    <h3>And before you know it, you've started your amazing band....</h3><br>
 
-<h2>(drumroll please....)</h2><br>
--->
+    <h2>(drumroll please....)</h2><br>
+    -->
+<div class="container">
+    <h2>This is the Band profile page for <!-- to the threshold of greatness, oh newly spawned Band known as--> <%= @band.name %>!</h2><hr>
 
-<h2>This is the Band profile page for <!-- to the threshold of greatness, oh newly spawned Band known as--> <%= @band.name %>!</h2><hr>
+    <h3>Illustrious members of <%= @band.name %> include the following Musicians:</h3>
+    <h3>
+      <% @band.filled_roles.each do |musician| %>
+        <ul>
+          <li><%= musician.role %></li>
+        </ul>
+        <% end %>
+    </h3>
 
-<h3>Illustrious members of <%= @band.name %> include the following Musicians:</h3>
-<h3>
-  <% @band.filled_roles.each do |musician| %>
-    <ul>
-      <li><%= musician.role %></li>
-    </ul>
-    <% end %>
-</h3>
+    <h3>However they also need:</h3>
+    <h3>
+      <% @band.open_roles.each do |musician| %>
+        <ul>
+          <li><%= musician.role %></li>
+        </ul>
+        <% end %>
+    </h3>
 
-<h3>However they also need:</h3>
-<h3>
-  <% @band.open_roles.each do |musician| %>
-    <ul>
-      <li><%= musician.role %></li>
-    </ul>
-    <% end %>
-</h3>
+    <hr>
 
-<hr>
-
-Phew, now that you've (hopefully) recovered from the excitement, you can click <%= link_to 'here', '/musicians' %> for a list of all Musicians on Bandroid, while in <%= link_to 'this other place', '/bands' %> is a list of all the bands on Bandroid. It's like Xmas all year round here, you see.<br><br>
-
+    Phew, now that you've (hopefully) recovered from the excitement, you can click <%= link_to 'here', '/musicians' %> for a list of all Musicians on Bandroid, while in <%= link_to 'this other place', '/bands' %> is a list of all the bands on Bandroid. It's like Xmas all year round here, you see.<br><br>
+</div>
 
 
-  <%# @band.musicians.each do |musician| %>
-    <%# link_to musician.stage_name, musician %>
-      <%# musician.instruments.each do |instrument| %>
-      <%# instrument.name %>
-        <%# end %>
-      <%# end %>
+      <%# @band.musicians.each do |musician| %>
+        <%# link_to musician.stage_name, musician %>
+          <%# musician.instruments.each do |instrument| %>
+          <%# instrument.name %>
+            <%# end %>
+          <%# end %>

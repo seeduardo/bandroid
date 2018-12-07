@@ -1,41 +1,43 @@
-<h2>Cor blimey! You've reached the profile page for a rad Musician known in legend as
-  <% if @musician.stage_name.empty? == false %>
-    <%= @musician.stage_name %> -
-  <% else %>
-    <%= @user.full_name %> -
-  <% end %>
-    isn't that just excellent news?</h2><hr>
-
-    <h3>Here is the full lowdown on
+<div class="container">
+    <h2>Cor blimey! You've reached the profile page for a rad Musician known in legend as
       <% if @musician.stage_name.empty? == false %>
-        <%= @musician.stage_name %>:
+        <%= @musician.stage_name %> -
       <% else %>
-        <%= @user.full_name %>:
+        <%= @user.full_name %> -
       <% end %>
-      <ul>
-        <li>Location: <%= @musician.location %> </li>
-        <li>Bio: <%= @musician.bio %> </li>
-        <li>Instruments:
-          <ul>
-            <% @musician.instruments.each do |instrument| %>
-            <li> <%= instrument.name %> </li>
-            <% end %>
-          </ul></li>
-        <li>Bands:
-          <% if @musician.bands.empty? == false %>
-            <ul>
-              <% @musician.bands.each do |band| %>
-              <li> <%= link_to band.name, band %> </li>
-              <% end %>
-            </ul></li>
+        isn't that just excellent news?</h2><hr>
+
+        <h3>Here is the full lowdown on
+          <% if @musician.stage_name.empty? == false %>
+            <%= @musician.stage_name %>:
           <% else %>
-            <ul>
-              <li>None yet....</li>
-            </ul>
+            <%= @user.full_name %>:
           <% end %>
-      </ul>
-    </h3><br><hr>
+          <ul>
+            <li>Location: <%= @musician.location %> </li>
+            <li>Bio: <%= @musician.bio %> </li>
+            <li>Instruments:
+              <ul>
+                <% @musician.instruments.each do |instrument| %>
+                <li> <%= instrument.name %> </li>
+                <% end %>
+              </ul></li>
+            <li>Bands:
+              <% if @musician.bands.empty? == false %>
+                <ul>
+                  <% @musician.bands.each do |band| %>
+                  <li> <%= link_to band.name, band %> </li>
+                  <% end %>
+                </ul></li>
+              <% else %>
+                <ul>
+                  <li>None yet....</li>
+                </ul>
+              <% end %>
+          </ul>
+        </h3><br><hr>
 
-Click <%= link_to 'here', '/musicians' %> to go back to a list of all Musicians, while in <%= link_to 'this other place', '/bands' %> is a list of all the bands on Bandroid. Awesome.<br><hr>
+    Click <%= link_to 'here', '/musicians' %> to go back to a list of all Musicians, while in <%= link_to 'this other place', '/bands' %> is a list of all the bands on Bandroid. Awesome.<br><hr>
 
-Of perhaps you'd prefer to <%= link_to "create a new Band", new_band_path %>? Making music with others makes life worth living!<hr>
+    Of perhaps you'd prefer to <%= link_to "create a new Band", new_band_path %>? Making music with others makes life worth living!<hr>
+</div>
