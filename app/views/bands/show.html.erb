@@ -14,9 +14,9 @@
 
     <h3>Illustrious members of <%= @band.name %> include the following Musicians:</h3>
     <h3>
-      <% @band.filled_roles.each do |musician| %>
+      <% @band.filled_roles.each do |bm| %>
         <ul>
-          <li><%= musician.role %></li>
+          <li><%= bm.role %> - <%= link_to bm.musician.stage_name, public_path(bm.musician) %> </li>
         </ul>
         <% end %>
     </h3>

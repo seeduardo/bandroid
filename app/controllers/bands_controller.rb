@@ -10,6 +10,7 @@ class BandsController < ApplicationController
 
     @filled_roles = @band.filled_roles
     @open_roles = @band.open_roles
+  
 
   end
 
@@ -18,9 +19,6 @@ class BandsController < ApplicationController
     @band = Band.new
     @instruments = Instrument.all
     @musicians = Musician.all
-
-    num_of_musicians = params[:num_of_musicians].to_i
-    num_of_musicians.times {@band.band_musicians.build}
 
   end
 
@@ -31,7 +29,11 @@ class BandsController < ApplicationController
     # @band.musicians.first.user_id = current_user.id
     if @band.valid?
       @band.save
-      redirect_to band_path(@band)
+      session[:num_of_musicians] = params[:num_of_musicians]
+      num_of_musicians = session[:num_of_musicians].to_i
+      num_of_musicians.times {@band.band_musicians << BandMusician.create(musician_id: "1", band_id: @band.id)}
+    
+      redirect_to edit_band_path(@band)
     else
       flash[:errors] = @band.errors
       redirect_to new_band_path
@@ -40,11 +42,16 @@ class BandsController < ApplicationController
   end
 
   def edit
-    # Add a way to only be able to edit a band that belongs to a user
 
     @band = Band.find(params[:id])
-    authorized_for(@band.user_id)
-    # @instruments = Instrument.all
+
+    @musicians = Musician.all
+    if @band.band_musicians.empty?
+  
+      num_of_musicians = session[:num_of_musicians].to_i
+      num_of_musicians.times {@band.band_musicians.create(musician_id: "1")}
+    end
+
   end
 
   def update
@@ -52,6 +59,8 @@ class BandsController < ApplicationController
     @band.update(band_params)
 
     if @band.valid?
+      @band.assign_as_filled
+      byebug
       redirect_to band_path(@band)
     else
       flash[:errors] = @band.errors
@@ -67,7 +76,7 @@ class BandsController < ApplicationController
   private
 
   def band_params
-    params.require(:band).permit(:name, :location, :bio, :user_id, instrument_ids: [], musician_ids: [], band_musicians_attributes: [:role, :filled])
+    params.require(:band).permit(:name, :location, :bio, :user_id, instrument_ids: [], musician_ids: [], band_musicians_attributes: [:role, :filled, :musician_id, :id])
   end
 
 
